@@ -21,7 +21,6 @@ export default function useWorkspaceListStore() {
 
     const selectWorkspace = (workspace: Workspace) => {
         selected_workspace.value = workspace;
-        router.push(`/workspace/${workspace.id}`)
     }
 
     return {

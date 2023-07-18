@@ -19,7 +19,7 @@ export default function useChatStore() {
 
   const selectChat = (chat: Chat) => {
     selected_chat.value = chat
-    router.push({name: 'MainBar', params: {chat_id: chat.id}})
+    // router.push({name: 'MainBar', params: {chat_id: chat.id}})
   }
 
   return {
