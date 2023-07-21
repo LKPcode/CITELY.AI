@@ -47,7 +47,7 @@
           <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
         </svg>
         <input v-model="search_query" 
-                @keypress.enter="search"
+                @keypress.enter="search(0)"
 
         type="text" class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm" placeholder="Search for Title or Describe paper" role="combobox" aria-expanded="false" aria-controls="options">
         <img v-if="searching" class="w-6 text-accent animate-spin mr-3" src="../components/icons/Loading.svg" alt="">
@@ -66,7 +66,11 @@
         Select papers to ad to Workspace 1
       </p> -->
 
-      <PaperSearchNavigation v-if="search_bar_expanded" />
+      <PaperSearchNavigation v-if="search_bar_expanded" 
+                              :page_num="page_num" 
+                              :total_papers="total_papers"
+                              @nextPage="navigatePaperList(page_num+=1)" 
+                              @previousPage="navigatePaperList(page_num-=1)" />
     </div>
   </div>
 </div>
@@ -89,19 +93,27 @@ const papers = ref([])
 const search_query = ref('')
 const search_bar_expanded = ref(false)
 const searching = ref(false)
+const page_num = ref(0)
+const total_papers = ref(0)
 
 
-const search = async () => {
+const search = async (page_num:number=0) => {
     searching.value = true
     try {
-        const res = await semmantic_api.queryPapers(search_query.value)
+        const res = await semmantic_api.queryPapers(search_query.value, page_num)
         papers.value = res.data
+        total_papers.value = res.total
         searching.value = false
     } catch (error) {
         console.log(error)
     } finally {
         searching.value = false
     }
+}
+
+const navigatePaperList = (navigate_to_page_num:number) => {
+    console.log('navigatePaperList')
+    search(navigate_to_page_num)
 }
 
 

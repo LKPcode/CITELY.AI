@@ -22,12 +22,15 @@ serve(async (req) => {
   }
 
   if (req.method === 'POST') {
-    const { query } = await req.json()
+    const { query, page_num } = await req.json()
     // Replace query spaces with + for API
     let search_term = query.replace(" ", "+")
 
+    let papers_per_page = 20
+    let offset = papers_per_page*page_num
+
     try{
-     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=0&limit=20&fields=title,url,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
+     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
 
      return new Response(
         JSON.stringify(data),
