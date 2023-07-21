@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "convo_id": 1,
+        "author": "user",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
+    },
+    {
+        "id":2,
+        "convo_id": 1,
+        "author": "AI",
+        "content":[
+            {
+                "type": "status",
+                "status_type": "understanding",
+                "text": "Understanding Question"
+            },
+            {
+                "type": "status",
+                "status_type": "splitting",
+                "text": "Splitting the Query into Steps"
+            },
+            {
+                "type": "step",
+                "step_number": 1,
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl.",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
+            },
+            {
+                "type": "step",
+                "step_number": 2,
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl.",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
+            },
+            {
+                "type": "step",
+                "step_number": 3,
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl.",
+                "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
+            },
+            {
+                "type": "answer",
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."            
+            }
+        ]
+    }
+]

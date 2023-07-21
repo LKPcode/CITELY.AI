@@ -1,6 +1,9 @@
 <template>
     <div class="h-full flex overflow-hidden">
 
+        <!-- <PaperSearch /> -->
+        <router-view></router-view>
+
         <div class="grow flex flex-col">
 
 
@@ -83,8 +86,9 @@
 import PaperMetadata from '../components/PaperMetadata.vue';
 import PaperList from '../components/PaperList.vue';
 // useRouter
-import { useRouter } from 'vue-router'
+import { RouterView, useRouter } from 'vue-router'
 import Tabs from '../components/Tabs.vue';
+
 
 // Back button
 const router = useRouter()

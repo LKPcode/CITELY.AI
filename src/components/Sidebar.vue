@@ -10,7 +10,7 @@
         <!-- SIDEBAR HEADER -->
         <div class="h-[70px] p-4 flex items-center bg-white  border-b border-grayer">
             <div @click="goToLibrary"
-             class="grow flex items-center p-2 mr-4 text-center bg-lightgray rounded-xl cursor-pointer">
+             class="grow flex items-center p-2 mr-4 text-center bg-lightgray hover:bg-grayer rounded-xl cursor-pointer">
                 <img src="../components/icons/NewChat.svg" class="w-8 ml-2" alt="Add Paper">
                 <div class="text-center grow font-bold ">
                     Library
@@ -36,8 +36,8 @@
         </div>
 
 
-        <div class="border-t justify-self-end border-grayer p-4">
-            <div class="flex items-center">
+        <div class="border-t justify-self-end border-grayer">
+            <div class="flex items-center hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
                 <img src="../components/icons/Settings.svg" class="w-6" alt="">
                 <div class="font-bold text-sm ml-4">Settings</div>
             </div>

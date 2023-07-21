@@ -1,0 +1,1542 @@
+{
+    "total": 613574,
+    "offset": 0,
+    "next": 20,
+    "data": [
+      {
+        "paperId": "8d5a41c94e01c10ed7baf7dd68a851790275a1e5",
+        "publicationVenue": {
+          "id": "057c6386-3be2-4649-8e9d-95d09e29102a",
+          "name": "Vaccines",
+          "issn": "2076-393X",
+          "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-282186",
+          "alternate_urls": [
+            "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-282186",
+            "https://www.mdpi.com/journal/vaccines"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/8d5a41c94e01c10ed7baf7dd68a851790275a1e5",
+        "title": "The Impact of COVID Vaccination on Symptoms of Long COVID: An International Survey of People with Lived Experience of Long COVID",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.mdpi.com/2076-393X/10/5/652/pdf?version=1650867319",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "publicationDate": "2022-04-21",
+        "authors": [
+          {
+            "authorId": "2411620",
+            "name": "W. Strain"
+          },
+          {
+            "authorId": "2129346727",
+            "name": "Ondine Sherwood"
+          },
+          {
+            "authorId": "2153585934",
+            "name": "Amitava Banerjee"
+          },
+          {
+            "authorId": "2129329145",
+            "name": "Vicky van der Togt"
+          },
+          {
+            "authorId": "2061572534",
+            "name": "L. Hishmeh"
+          },
+          {
+            "authorId": "2517717",
+            "name": "J. Rossman"
+          }
+        ]
+      },
+      {
+        "paperId": "0f722d8d3882006980da6ddce74da5bcd8361fb0",
+        "publicationVenue": {
+          "id": "0fca361f-a7c9-4e34-b57c-f02edb708a5d",
+          "name": "Neurological Sciences",
+          "type": "journal",
+          "alternate_names": [
+            "Neurol Sci"
+          ],
+          "issn": "1590-1874",
+          "url": "https://link.springer.com/journal/10072"
+        },
+        "url": "https://www.semanticscholar.org/paper/0f722d8d3882006980da6ddce74da5bcd8361fb0",
+        "title": "Bilateral optic neuritis after COVID vaccination",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://link.springer.com/content/pdf/10.1007/s10072-021-05832-9.pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "LettersAndComments"
+        ],
+        "publicationDate": "2022-01-31",
+        "authors": [
+          {
+            "authorId": "6449657",
+            "name": "V. Arnao"
+          },
+          {
+            "authorId": "2151716003",
+            "name": "Mario Baronello Maimone"
+          },
+          {
+            "authorId": "8235549",
+            "name": "V. Perini"
+          },
+          {
+            "authorId": "2151716686",
+            "name": "Gregorio Lo Giudice"
+          },
+          {
+            "authorId": "34902224",
+            "name": "S. Cottone"
+          }
+        ]
+      },
+      {
+        "paperId": "dedb8621c013a1f6a07e6403f00af32b433e2a81",
+        "publicationVenue": {
+          "id": "1d7cbbdc-b376-4451-ab0f-0a9158c6e16f",
+          "name": "Nature Microbiology",
+          "type": "journal",
+          "alternate_names": [
+            "Nature microbiology",
+            "Nat microbiol",
+            "Nat Microbiol"
+          ],
+          "issn": "2058-5276",
+          "url": "http://www.nature.com/nmicrobiol/"
+        },
+        "url": "https://www.semanticscholar.org/paper/dedb8621c013a1f6a07e6403f00af32b433e2a81",
+        "title": "COVID vaccination in older adults",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.nature.com/articles/s41564-022-01166-0.pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2022-07-14",
+        "authors": [
+          {
+            "authorId": "8187690",
+            "name": "S. Hägg"
+          },
+          {
+            "authorId": "6485138",
+            "name": "D. Religa"
+          }
+        ]
+      },
+      {
+        "paperId": "b9f6a0565b1e42da285e6c7a57feb4362c0b2f33",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/b9f6a0565b1e42da285e6c7a57feb4362c0b2f33",
+        "title": "Carnitine palmitoyltransferase II deficiency and post-COVID vaccination rhabdomyolysis",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://academic.oup.com/qjmed/article-pdf/114/8/596/41098776/hcab077.pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2021-04-19",
+        "authors": [
+          {
+            "authorId": "151358763",
+            "name": "A. Tan"
+          },
+          {
+            "authorId": "32262176",
+            "name": "K. Stepien"
+          },
+          {
+            "authorId": "152478954",
+            "name": "S. Narayana"
+          }
+        ]
+      },
+      {
+        "paperId": "8d85e3b7cf3f35d9cfa09f08270740743bdce802",
+        "publicationVenue": {
+          "id": "e1c5dcc4-7454-4f13-be9e-d45ac7c88ba7",
+          "name": "Clinical Nuclear Medicine",
+          "type": "journal",
+          "alternate_names": [
+            "Clin Nucl Med"
+          ],
+          "issn": "0363-9762",
+          "url": "https://journals.lww.com/nuclearmed",
+          "alternate_urls": [
+            "http://www.nuclearmed.com/pt/re/cnm/home.htm;jsessionid=EenmtneYcEVHXF8reF5cAnRupNDAUxn22g4iKAvnoPqqNGqJf8zK!169259080!-949856144!9001!-1",
+            "http://www.nuclearmed.com/"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/8d85e3b7cf3f35d9cfa09f08270740743bdce802",
+        "title": "The Challenge of Staging Breast Cancer With PET/CT in the Era of COVID Vaccination",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://europepmc.org/articles/pmc8575097?pdf=render",
+          "status": "GREEN"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2021-04-01",
+        "authors": [
+          {
+            "authorId": "2110970020",
+            "name": "A. Brown"
+          },
+          {
+            "authorId": "6620366",
+            "name": "Sweni Shah"
+          },
+          {
+            "authorId": "1834299",
+            "name": "A. Groves"
+          },
+          {
+            "authorId": "49725226",
+            "name": "S. Wan"
+          },
+          {
+            "authorId": "10229167",
+            "name": "A. Malhotra"
+          }
+        ]
+      },
+      {
+        "paperId": "b2b1d6225ebee4c23dfefd76266e3ab9d172434e",
+        "publicationVenue": {
+          "id": "057c6386-3be2-4649-8e9d-95d09e29102a",
+          "name": "Vaccines",
+          "issn": "2076-393X",
+          "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-282186",
+          "alternate_urls": [
+            "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-282186",
+            "https://www.mdpi.com/journal/vaccines"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/b2b1d6225ebee4c23dfefd76266e3ab9d172434e",
+        "title": "Anti-COVID Vaccination for Adolescents: A Survey on Determinants of Vaccine Parental Hesitancy",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.mdpi.com/2076-393X/9/11/1309/pdf?version=1636610456",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "publicationDate": "2021-11-01",
+        "authors": [
+          {
+            "authorId": "5865406",
+            "name": "S. Zona"
+          },
+          {
+            "authorId": "8237091",
+            "name": "S. Partesotti"
+          },
+          {
+            "authorId": "50767405",
+            "name": "A. Bergomi"
+          },
+          {
+            "authorId": "16199350",
+            "name": "Cristiano Rosafio"
+          },
+          {
+            "authorId": "2140332668",
+            "name": "Francesco Antodaro"
+          },
+          {
+            "authorId": "145868150",
+            "name": "S. Esposito"
+          }
+        ]
+      },
+      {
+        "paperId": "dca76137d55a9714f41c0b804546181611ff0ca8",
+        "publicationVenue": {
+          "id": "75d7a8c1-d871-42db-a8e4-7cf5146fdb62",
+          "name": "Social Science Research Network",
+          "type": "journal",
+          "alternate_names": [
+            "SSRN, Social Science Research Network (SSRN) home page",
+            "SSRN Electronic Journal",
+            "Soc Sci Res Netw",
+            "SSRN",
+            "SSRN Home Page",
+            "SSRN Electron J",
+            "Social Science Electronic Publishing presents Social Science Research Network"
+          ],
+          "issn": "1556-5068",
+          "url": "http://www.ssrn.com/",
+          "alternate_urls": [
+            "www.ssrn.com/",
+            "https://fatcat.wiki/container/tol7woxlqjeg5bmzadeg6qrg3e",
+            "https://www.wikidata.org/wiki/Q53949192",
+            "www.ssrn.com/en",
+            "http://www.ssrn.com/en/",
+            "http://umlib.nl/ssrn",
+            "umlib.nl/ssrn"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/dca76137d55a9714f41c0b804546181611ff0ca8",
+        "title": "The Impact of COVID Vaccination on Symptoms of Long COVID. An International Survey of People with Lived Experience of Long COVID",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://discovery.ucl.ac.uk/10149861/1/Banerjee_vaccines-10-00652-v2.pdf",
+          "status": "GREEN"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "Review"
+        ],
+        "publicationDate": "2021-06-17",
+        "authors": [
+          {
+            "authorId": "2411620",
+            "name": "W. Strain"
+          },
+          {
+            "authorId": "2129346727",
+            "name": "Ondine Sherwood"
+          },
+          {
+            "authorId": "2215115",
+            "name": "A. Banerjee"
+          },
+          {
+            "authorId": "2157982459",
+            "name": "Vicky van der Togt"
+          },
+          {
+            "authorId": "2061572534",
+            "name": "L. Hishmeh"
+          },
+          {
+            "authorId": "2517717",
+            "name": "J. Rossman"
+          }
+        ]
+      },
+      {
+        "paperId": "942be051ae08c762fd9c195184d66d32a839f2f3",
+        "publicationVenue": {
+          "id": "136edf8d-0f88-4c2c-830f-461c6a9b842e",
+          "name": "Applied Sciences",
+          "type": "journal",
+          "alternate_names": [
+            "Appl Sci"
+          ],
+          "issn": "2076-3417",
+          "url": "http://www.e-helvetica.nb.admin.ch/directAccess?callnumber=bel-217814",
+          "alternate_urls": [
+            "http://www.mathem.pub.ro/apps/",
+            "https://www.mdpi.com/journal/applsci",
+            "http://nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:ch:bel-217814"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/942be051ae08c762fd9c195184d66d32a839f2f3",
+        "title": "Towards a GDPR-Compliant Blockchain-Based COVID Vaccination Passport",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.mdpi.com/2076-3417/11/13/6132/pdf?version=1625191196",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Computer Science"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2021-07-01",
+        "authors": [
+          {
+            "authorId": "89585207",
+            "name": "A. B. Haque"
+          },
+          {
+            "authorId": "9140522",
+            "name": "Bilal Naqvi"
+          },
+          {
+            "authorId": "50430352",
+            "name": "A. Islam"
+          },
+          {
+            "authorId": "20456790",
+            "name": "S. Hyrynsalmi"
+          }
+        ]
+      },
+      {
+        "paperId": "f1af035465bd5c00f72364b794693815bc23d632",
+        "publicationVenue": {
+          "id": "14b1092b-edd4-4455-921b-d5f001699bc8",
+          "name": "Pathology (Sydney)",
+          "type": "journal",
+          "alternate_names": [
+            "Pathology",
+            "Pathol (sydney"
+          ],
+          "issn": "0031-3025",
+          "url": "http://www.informaworld.com/1465-3931",
+          "alternate_urls": [
+            "https://journals.lww.com/pathologyrcpa/pages/default.aspx",
+            "http://ovidsp.ovid.com/ovidweb.cgi?AN=01268031-000000000-00000&CSC=Y&D=ovft&NEWS=n&PAGE=TOC&T=JS",
+            "http://www.sciencedirect.com/science/journal/00313025",
+            "http://journalsonline.tandf.co.uk/openurl.asp?genre=journal&issn=0031-3025"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/f1af035465bd5c00f72364b794693815bc23d632",
+        "title": "A case of post-covid vaccination hyponatraemia",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "http://www.pathologyjournal.rcpa.edu.au/article/S0031302521005584/pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": null,
+        "publicationDate": "2022-02-03",
+        "authors": [
+          {
+            "authorId": "12640853",
+            "name": "Andra P Desra"
+          },
+          {
+            "authorId": "2118966078",
+            "name": "Joel D Smith"
+          },
+          {
+            "authorId": "102406789",
+            "name": "C. Chiang"
+          }
+        ]
+      },
+      {
+        "paperId": "46d07155729ccbeb4ea309cb141ad93548d00498",
+        "publicationVenue": {
+          "id": "72ac62a1-486d-49b8-a033-12e6aafdb76f",
+          "name": "European Journal of Medical and Health Sciences",
+          "type": "journal",
+          "alternate_names": [
+            "Eur J Med Health Sci"
+          ],
+          "issn": "2593-8339",
+          "alternate_issns": [
+            "2663-7510"
+          ],
+          "url": "https://universepg.com/journal/ejmhs"
+        },
+        "url": "https://www.semanticscholar.org/paper/46d07155729ccbeb4ea309cb141ad93548d00498",
+        "title": "COVID Vaccination for Children: A Literature Review",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.ej-med.org/index.php/ejmed/article/download/1566/932",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": null,
+        "publicationTypes": [
+          "Review"
+        ],
+        "publicationDate": "2022-12-24",
+        "authors": [
+          {
+            "authorId": "2198338730",
+            "name": "Vennia Riskia Tristianti"
+          }
+        ]
+      },
+      {
+        "paperId": "18aa069779ba3819a12f10ea076f20f92d6363e0",
+        "publicationVenue": {
+          "id": "242e875e-dbe4-4ae3-9f24-41af93209e02",
+          "name": "Nature Reviews Rheumatology",
+          "type": "journal",
+          "alternate_names": [
+            "Nat Rev Rheumatol"
+          ],
+          "issn": "1759-4790",
+          "url": "http://www.nature.com/nrrheum/archive/index.html"
+        },
+        "url": "https://www.semanticscholar.org/paper/18aa069779ba3819a12f10ea076f20f92d6363e0",
+        "title": "Optimizing methotrexate withdrawal during COVID vaccination",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.nature.com/articles/s41584-022-00856-7.pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2022-09-30",
+        "authors": [
+          {
+            "authorId": "145827693",
+            "name": "J. McHugh"
+          }
+        ]
+      },
+      {
+        "paperId": "8f293f1479ee6c40c6f9f422e392b37360e8f93b",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/8f293f1479ee6c40c6f9f422e392b37360e8f93b",
+        "title": "Mathematical Evaluation of Covid Vaccination Efficacy In England",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://osf.io/tzmfq/download",
+          "status": "GREEN"
+        },
+        "fieldsOfStudy": null,
+        "publicationTypes": null,
+        "publicationDate": "2022-02-01",
+        "authors": [
+          {
+            "authorId": "68989032",
+            "name": "A. Šorli"
+          }
+        ]
+      },
+      {
+        "paperId": "5d1b13ca3d4499fbc8d71ce66c9e662b96c09948",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/5d1b13ca3d4499fbc8d71ce66c9e662b96c09948",
+        "title": "Astra zeneca Covid vaccination conversion reaction",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.peertechzpublications.com/articles/GJMCCR-8-232.pdf",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": null,
+        "publicationTypes": null,
+        "publicationDate": null,
+        "authors": [
+          {
+            "authorId": "2126021465",
+            "name": "Beran Roy G"
+          }
+        ]
+      },
+      {
+        "paperId": "8f3f151c842b57390fd3ce12b25e4c67c14eca95",
+        "publicationVenue": {
+          "id": "9851a80d-70e8-4cf9-8daf-7b8e8f18bd6f",
+          "name": "Global Heart",
+          "type": "journal",
+          "alternate_names": [
+            "Global heart",
+            "Glob Heart",
+            "Glob heart"
+          ],
+          "issn": "2211-8160",
+          "url": "https://www.journals.elsevier.com/global-heart",
+          "alternate_urls": [
+            "https://globalheartjournal.com/"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/8f3f151c842b57390fd3ce12b25e4c67c14eca95",
+        "title": "WHF Position Statement on COVID Vaccination",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "http://globalheartjournal.com/articles/10.5334/gh.1027/galley/983/download/",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2021-04-27",
+        "authors": [
+          {
+            "authorId": "4942726",
+            "name": "F. Thienemann"
+          },
+          {
+            "authorId": "66229704",
+            "name": "G. Chakafana"
+          },
+          {
+            "authorId": "7007417",
+            "name": "D. Pineiro"
+          },
+          {
+            "authorId": "144618228",
+            "name": "F. Pinto"
+          },
+          {
+            "authorId": "2662985",
+            "name": "P. Perel"
+          },
+          {
+            "authorId": "152585252",
+            "name": "K. Singh"
+          },
+          {
+            "authorId": "40282757",
+            "name": "J. Eiselé"
+          },
+          {
+            "authorId": "145574924",
+            "name": "D. Prabhakaran"
+          },
+          {
+            "authorId": "153654062",
+            "name": "K. Sliwa"
+          }
+        ]
+      },
+      {
+        "paperId": "2c02c79103a11f165ef7db2781b43ff760c0354c",
+        "publicationVenue": {
+          "id": "dc31f077-7737-4e33-baa3-bceeff44ec27",
+          "name": "New England Journal of Medicine",
+          "type": "journal",
+          "alternate_names": [
+            "n engl J Med",
+            "The New England Journal of Medicine",
+            "N Engl J Med"
+          ],
+          "issn": "0028-4793",
+          "url": "https://www.nejm.org/",
+          "alternate_urls": [
+            "http://www.nejm.org/content/index.asp",
+            "http://www.nejm.org/"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/2c02c79103a11f165ef7db2781b43ff760c0354c",
+        "title": "BNT162b2 mRNA Covid-19 Vaccine in a Nationwide Mass Vaccination Setting",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.nejm.org/doi/pdf/10.1056/NEJMoa2101765?articleTools=true",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2021-02-24",
+        "authors": [
+          {
+            "authorId": "27937898",
+            "name": "N. Dagan"
+          },
+          {
+            "authorId": "2125361771",
+            "name": "N. Barda"
+          },
+          {
+            "authorId": "6623183",
+            "name": "E. Kepten"
+          },
+          {
+            "authorId": "6504115",
+            "name": "O. Miron"
+          },
+          {
+            "authorId": "2051566852",
+            "name": "Shay Perchik"
+          },
+          {
+            "authorId": "2670774",
+            "name": "M. Katz"
+          },
+          {
+            "authorId": "40362338",
+            "name": "M. Hernán"
+          },
+          {
+            "authorId": "48825765",
+            "name": "M. Lipsitch"
+          },
+          {
+            "authorId": "2057414963",
+            "name": "Ben Y. Reis"
+          },
+          {
+            "authorId": "3296342",
+            "name": "R. Balicer"
+          }
+        ]
+      },
+      {
+        "paperId": "011be7dc675d505b656581436f9dfd06cc6081b8",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/011be7dc675d505b656581436f9dfd06cc6081b8",
+        "title": "Myocarditis Cases Reported After mRNA-Based COVID-19 Vaccination in the US From December 2020 to August 2021.",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://jamanetwork.com/journals/jama/articlepdf/2788346/jama_oster_2022_oi_210145_1647635624.12259.pdf",
+          "status": "BRONZE"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "publicationDate": "2022-01-25",
+        "authors": [
+          {
+            "authorId": "3056578",
+            "name": "M. Oster"
+          },
+          {
+            "authorId": "4046882",
+            "name": "D. Shay"
+          },
+          {
+            "authorId": "2148766055",
+            "name": "John R Su"
+          },
+          {
+            "authorId": "35782185",
+            "name": "J. Gee"
+          },
+          {
+            "authorId": "5078073",
+            "name": "C. Creech"
+          },
+          {
+            "authorId": "5005594",
+            "name": "K. Broder"
+          },
+          {
+            "authorId": "2072661721",
+            "name": "Kathryn M. Edwards"
+          },
+          {
+            "authorId": "6726982",
+            "name": "J. Soslow"
+          },
+          {
+            "authorId": "14170065",
+            "name": "J. M. Dendy"
+          },
+          {
+            "authorId": "5288922",
+            "name": "E. Schlaudecker"
+          },
+          {
+            "authorId": "2149915743",
+            "name": "S. Lang"
+          },
+          {
+            "authorId": "4385740",
+            "name": "E. Barnett"
+          },
+          {
+            "authorId": "5663160",
+            "name": "F. Ruberg"
+          },
+          {
+            "authorId": "145513036",
+            "name": "Michael John Smith"
+          },
+          {
+            "authorId": "35714983",
+            "name": "M. J. Campbell"
+          },
+          {
+            "authorId": "2075294893",
+            "name": "R. Lopes"
+          },
+          {
+            "authorId": "2058352535",
+            "name": "L. Sperling"
+          },
+          {
+            "authorId": "14125312",
+            "name": "J. Baumblatt"
+          },
+          {
+            "authorId": "2147439596",
+            "name": "Deborah Thompson"
+          },
+          {
+            "authorId": "134588366",
+            "name": "P. Marquez"
+          },
+          {
+            "authorId": "1752551488",
+            "name": "P. Strid"
+          },
+          {
+            "authorId": "2152066985",
+            "name": "Jared Woo"
+          },
+          {
+            "authorId": "16000584",
+            "name": "R. Pugsley"
+          },
+          {
+            "authorId": "1422137709",
+            "name": "Sarah Reagan‐Steiner"
+          },
+          {
+            "authorId": "3585712",
+            "name": "F. Destefano"
+          },
+          {
+            "authorId": "5280431",
+            "name": "T. Shimabukuro"
+          }
+        ]
+      },
+      {
+        "paperId": "b84319ce9a859c1f487b862aed5ce17c500027dc",
+        "publicationVenue": {
+          "id": "3048b449-a773-4256-9bb5-5e61fbb61e52",
+          "name": "British medical journal",
+          "type": "journal",
+          "alternate_names": [
+            "BMJ (Clinical Research Edition)",
+            "British Medical Journal",
+            "Br Med J",
+            "BMJ (british Med J",
+            "The BMJ (British Medical Journal)",
+            "eBMJ",
+            "Br med j",
+            "BMJ (clinical Res Ed",
+            "Br Med J (clinical Res Ed",
+            "British Medical Journal (Clinical Research Edition)",
+            "BMJ"
+          ],
+          "issn": "1759-2151",
+          "alternate_issns": [
+            "1756-1833",
+            "0959-8138",
+            "1790-5249",
+            "1106-5028",
+            "1468-5833",
+            "0267-0623",
+            "1222-5835",
+            "1576-9445",
+            "1106-4226"
+          ],
+          "url": "https://www.bmj.com/",
+          "alternate_urls": [
+            "http://www.ibmj.net/",
+            "https://www.jstor.org/journal/bmjbritmedj",
+            "http://www.jstor.org/journals/09598138.html",
+            "http://www.bmj.ro/",
+            "http://www.bmj.com/bmj/",
+            "http://www.bmj.com/thebmj",
+            "http://www.jstor.org/action/showPublication?journalCode=bmjbritmedj",
+            "http://www.jstor.org/action/showPublication?journalCode=britmedjclires",
+            "https://www.bmj.com/archive"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/b84319ce9a859c1f487b862aed5ce17c500027dc",
+        "title": "Trajectory of long covid symptoms after covid-19 vaccination: community based cohort study",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.bmj.com/content/bmj/377/bmj-2021-069676.full.pdf",
+          "status": "HYBRID"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle",
+          "Review"
+        ],
+        "publicationDate": "2022-05-18",
+        "authors": [
+          {
+            "authorId": "51222497",
+            "name": "D. Ayoubkhani"
+          },
+          {
+            "authorId": "91449783",
+            "name": "C. Bermingham"
+          },
+          {
+            "authorId": "3601371",
+            "name": "K. Pouwels"
+          },
+          {
+            "authorId": "48913003",
+            "name": "M. Glickman"
+          },
+          {
+            "authorId": "52139608",
+            "name": "V. Nafilyan"
+          },
+          {
+            "authorId": "3967199",
+            "name": "F. Zaccardi"
+          },
+          {
+            "authorId": "144582445",
+            "name": "K. Khunti"
+          },
+          {
+            "authorId": "2066614",
+            "name": "N. Alwan"
+          },
+          {
+            "authorId": "2150477435",
+            "name": "A. Walker"
+          }
+        ]
+      },
+      {
+        "paperId": "dbc54256ceb03e26f80e05b1bf7090d12f8fcee4",
+        "publicationVenue": {
+          "id": "9e995b6d-f30b-4ab4-a13b-3dc2cc992f47",
+          "name": "Nature Network Boston",
+          "type": "journal",
+          "alternate_names": [
+            "Nat Netw Boston",
+            "Nat Med",
+            "Nature Medicine"
+          ],
+          "issn": "1744-7933",
+          "alternate_issns": [
+            "1078-8956"
+          ],
+          "url": "https://www.nature.com/nature/articles?code=archive_news",
+          "alternate_urls": [
+            "http://www.nature.com/news",
+            "http://www.nature.com/nm/",
+            "http://www.nature.com/nm/index.html"
+          ]
+        },
+        "url": "https://www.semanticscholar.org/paper/dbc54256ceb03e26f80e05b1bf7090d12f8fcee4",
+        "title": "SARS-CoV-2 infection and COVID-19 vaccination rates in pregnant women in Scotland",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.nature.com/articles/s41591-021-01666-2.pdf",
+          "status": "HYBRID"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2022-01-13",
+        "authors": [
+          {
+            "authorId": "35564391",
+            "name": "S. Stock"
+          },
+          {
+            "authorId": "2047825523",
+            "name": "J. Carruthers"
+          },
+          {
+            "authorId": "50213099",
+            "name": "C. Calvert"
+          },
+          {
+            "authorId": "20621767",
+            "name": "C. Denny"
+          },
+          {
+            "authorId": "2028977122",
+            "name": "J. Donaghy"
+          },
+          {
+            "authorId": "40457887",
+            "name": "A. Goulding"
+          },
+          {
+            "authorId": "3116540",
+            "name": "L. Hopcroft"
+          },
+          {
+            "authorId": "47950011",
+            "name": "L. Hopkins"
+          },
+          {
+            "authorId": "2053562781",
+            "name": "T. Mclaughlin"
+          },
+          {
+            "authorId": "47595004",
+            "name": "Jiafeng Pan"
+          },
+          {
+            "authorId": "145071054",
+            "name": "T. Shi"
+          },
+          {
+            "authorId": "2069537435",
+            "name": "B. Taylor"
+          },
+          {
+            "authorId": "2072432003",
+            "name": "U. Agrawal"
+          },
+          {
+            "authorId": "5579633",
+            "name": "B. Auyeung"
+          },
+          {
+            "authorId": "3691127",
+            "name": "S. Katikireddi"
+          },
+          {
+            "authorId": "145343218",
+            "name": "C. McCowan"
+          },
+          {
+            "authorId": "1753593997",
+            "name": "J. Murray"
+          },
+          {
+            "authorId": "3507334",
+            "name": "Colin Simpson"
+          },
+          {
+            "authorId": "2058291268",
+            "name": "C. Robertson"
+          },
+          {
+            "authorId": "4741494",
+            "name": "E. Vasileiou"
+          },
+          {
+            "authorId": "143729030",
+            "name": "Aziz Sheikh"
+          },
+          {
+            "authorId": "2072347536",
+            "name": "R. Wood"
+          }
+        ]
+      },
+      {
+        "paperId": "263494876580e4f57ad329ce4fd5dbfe8ec58f41",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/263494876580e4f57ad329ce4fd5dbfe8ec58f41",
+        "title": "Effectiveness of Maternal Vaccination with mRNA COVID-19 Vaccine During Pregnancy Against COVID-19–Associated Hospitalization in Infants Aged <6 Months — 17 States, July 2021–January 2022",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.cdc.gov/mmwr/volumes/71/wr/pdfs/mm7107e3-H.pdf",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2022-02-18",
+        "authors": [
+          {
+            "authorId": "4935026",
+            "name": "N. Halasa"
+          },
+          {
+            "authorId": "51226266",
+            "name": "Samantha M Olson"
+          },
+          {
+            "authorId": "3965911",
+            "name": "M. Staat"
+          },
+          {
+            "authorId": "46217267",
+            "name": "Margaret M. Newhams"
+          },
+          {
+            "authorId": "2054556056",
+            "name": "Ashley M. Price"
+          },
+          {
+            "authorId": "144465627",
+            "name": "J. Boom"
+          },
+          {
+            "authorId": "4566237",
+            "name": "Leila C. Sahni"
+          },
+          {
+            "authorId": "2053490465",
+            "name": "M. Cameron"
+          },
+          {
+            "authorId": "5296528",
+            "name": "P. Pannaraj"
+          },
+          {
+            "authorId": "11488600",
+            "name": "K. Bline"
+          },
+          {
+            "authorId": "47533801",
+            "name": "Samina S. Bhumbra"
+          },
+          {
+            "authorId": "1783190669",
+            "name": "T. Bradford"
+          },
+          {
+            "authorId": "10735284",
+            "name": "K. Chiotos"
+          },
+          {
+            "authorId": "40171174",
+            "name": "B. Coates"
+          },
+          {
+            "authorId": "7816128",
+            "name": "M. Cullimore"
+          },
+          {
+            "authorId": "5152537",
+            "name": "N. Cvijanovich"
+          },
+          {
+            "authorId": "4629140",
+            "name": "H. Flori"
+          },
+          {
+            "authorId": "38263433",
+            "name": "S. Gertz"
+          },
+          {
+            "authorId": "40507927",
+            "name": "S. Heidemann"
+          },
+          {
+            "authorId": "14722580",
+            "name": "C. Hobbs"
+          },
+          {
+            "authorId": "144766459",
+            "name": "J. Hume"
+          },
+          {
+            "authorId": "16146311",
+            "name": "K. Irby"
+          },
+          {
+            "authorId": "23664147",
+            "name": "S. Kamidani"
+          },
+          {
+            "authorId": "5406399",
+            "name": "M. Kong"
+          },
+          {
+            "authorId": "39858469",
+            "name": "E. Levy"
+          },
+          {
+            "authorId": "2133740377",
+            "name": "E. Mack"
+          },
+          {
+            "authorId": "12702860",
+            "name": "A. Maddux"
+          },
+          {
+            "authorId": "12513276",
+            "name": "K. Michelson"
+          },
+          {
+            "authorId": "6829566",
+            "name": "Ryan A. Nofziger"
+          },
+          {
+            "authorId": "33630262",
+            "name": "J. Schuster"
+          },
+          {
+            "authorId": "39990454",
+            "name": "S. Schwartz"
+          },
+          {
+            "authorId": "13561332",
+            "name": "L. Smallcomb"
+          },
+          {
+            "authorId": "3665099",
+            "name": "K. Tarquinio"
+          },
+          {
+            "authorId": "4849371",
+            "name": "T. Walker"
+          },
+          {
+            "authorId": "144235788",
+            "name": "M. Zinter"
+          },
+          {
+            "authorId": "1853890",
+            "name": "S. Gilboa"
+          },
+          {
+            "authorId": "48373680",
+            "name": "Kara N. Polen"
+          },
+          {
+            "authorId": "31621413",
+            "name": "A. Campbell"
+          },
+          {
+            "authorId": "2246093",
+            "name": "A. Randolph"
+          },
+          {
+            "authorId": "2151791512",
+            "name": "M. Patel"
+          },
+          {
+            "authorId": "35019762",
+            "name": "L. Zambrano"
+          },
+          {
+            "authorId": "2151173980",
+            "name": "Meghan Murdock"
+          },
+          {
+            "authorId": "12757861",
+            "name": "M. Gaspers"
+          },
+          {
+            "authorId": "50817263",
+            "name": "Connor P. Kelley"
+          },
+          {
+            "authorId": "6994760",
+            "name": "K. Typpo"
+          },
+          {
+            "authorId": "4267037",
+            "name": "P. Mourani"
+          },
+          {
+            "authorId": "143615404",
+            "name": "R. Sanders"
+          },
+          {
+            "authorId": "2157699938",
+            "name": "Charanne P. Smith"
+          },
+          {
+            "authorId": "2151174631",
+            "name": "M. Yates"
+          },
+          {
+            "authorId": "72687794",
+            "name": "Katheryn Crane"
+          },
+          {
+            "authorId": "3564288",
+            "name": "G. Lionetti"
+          },
+          {
+            "authorId": "2151174246",
+            "name": "Juliana Murcia-Montoya"
+          },
+          {
+            "authorId": "2151174557",
+            "name": "Denise Villarreal-Chico"
+          },
+          {
+            "authorId": "2156685756",
+            "name": "Daniel Hakimi"
+          },
+          {
+            "authorId": "2151174443",
+            "name": "Adam Skura"
+          },
+          {
+            "authorId": "146962171",
+            "name": "Imogene A. Carson"
+          },
+          {
+            "authorId": "50533085",
+            "name": "Justin M. Lockwood"
+          },
+          {
+            "authorId": "2151173972",
+            "name": "Emily Port"
+          },
+          {
+            "authorId": "51161029",
+            "name": "Brandon Chatani"
+          },
+          {
+            "authorId": "2104708209",
+            "name": "N. Baida"
+          },
+          {
+            "authorId": "1390032523",
+            "name": "L. Hussaini"
+          },
+          {
+            "authorId": "2156688764",
+            "name": "Hassan A. Khan"
+          },
+          {
+            "authorId": "2138494001",
+            "name": "Simone T. Rhodes"
+          },
+          {
+            "authorId": "4168981",
+            "name": "C. Rowan"
+          },
+          {
+            "authorId": "2036832622",
+            "name": "M. Stumpf"
+          },
+          {
+            "authorId": "2067520745",
+            "name": "Marla S. Johnston"
+          },
+          {
+            "authorId": "115585777",
+            "name": "L. Berbert"
+          },
+          {
+            "authorId": "2133745557",
+            "name": "Benjamin J. Boutselis"
+          },
+          {
+            "authorId": "2154733632",
+            "name": "Sabrina Chen"
+          },
+          {
+            "authorId": "2168605699",
+            "name": "Jie He"
+          },
+          {
+            "authorId": "14514158",
+            "name": "Suden Kucukak"
+          },
+          {
+            "authorId": "2156675907",
+            "name": "Timothy P. McCadden"
+          },
+          {
+            "authorId": "2149311595",
+            "name": "Amber O. Orzel"
+          },
+          {
+            "authorId": "2117307509",
+            "name": "Edie Weller"
+          },
+          {
+            "authorId": "118663186",
+            "name": "P. Moran"
+          },
+          {
+            "authorId": "2064771234",
+            "name": "Ellen R. Bruno"
+          },
+          {
+            "authorId": "2059360817",
+            "name": "Lexie A. Goertzen"
+          },
+          {
+            "authorId": "1633558299",
+            "name": "Supriya Behl"
+          },
+          {
+            "authorId": "2151174515",
+            "name": "Noelle M. Drapeau"
+          },
+          {
+            "authorId": "51194561",
+            "name": "Lacy Malloch"
+          },
+          {
+            "authorId": "2038670950",
+            "name": "Lora M. Martin"
+          },
+          {
+            "authorId": "39740274",
+            "name": "A. Palmer"
+          },
+          {
+            "authorId": "145579665",
+            "name": "R. Santos"
+          },
+          {
+            "authorId": "2151174552",
+            "name": "Abigail Kietzman"
+          },
+          {
+            "authorId": "120138066",
+            "name": "melissa. sullivan"
+          },
+          {
+            "authorId": "151090858",
+            "name": "Lauren A. Hoody"
+          },
+          {
+            "authorId": "1391622453",
+            "name": "Valerie H. Rinehart"
+          },
+          {
+            "authorId": "2151174519",
+            "name": "Paris C. Bennett"
+          },
+          {
+            "authorId": "2151174550",
+            "name": "Merry L. Tomcany"
+          },
+          {
+            "authorId": "12543140",
+            "name": "Nicole A. Twinem"
+          },
+          {
+            "authorId": "2151174624",
+            "name": "Chelsea C. Rohlfs"
+          },
+          {
+            "authorId": "2143216215",
+            "name": "Amber Wolfe"
+          },
+          {
+            "authorId": "114056969",
+            "name": "R. Douglas"
+          },
+          {
+            "authorId": "2151174569",
+            "name": "Kathlyn Phengchomphet"
+          },
+          {
+            "authorId": "1742431009",
+            "name": "Megan M. Bickford"
+          },
+          {
+            "authorId": "150195967",
+            "name": "Lauren E. Wakefield"
+          },
+          {
+            "authorId": "6795579",
+            "name": "Meenakshi Golchha"
+          },
+          {
+            "authorId": "120684061",
+            "name": "Laura S. Stewart"
+          },
+          {
+            "authorId": "2151174089",
+            "name": "Jennifer N. Oates"
+          },
+          {
+            "authorId": "13298460",
+            "name": "C. Bowens"
+          },
+          {
+            "authorId": "13965036",
+            "name": "Mia Maamari"
+          }
+        ]
+      },
+      {
+        "paperId": "99c537982a81b88aaa537a78cb3215e6a2ffc2c9",
+        "publicationVenue": null,
+        "url": "https://www.semanticscholar.org/paper/99c537982a81b88aaa537a78cb3215e6a2ffc2c9",
+        "title": "Risk Factors for Severe COVID-19 Outcomes Among Persons Aged ≥18 Years Who Completed a Primary COVID-19 Vaccination Series — 465 Health Care Facilities, United States, December 2020–October 2021",
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.cdc.gov/mmwr/volumes/71/wr/pdfs/mm7101a4-H.pdf",
+          "status": "GOLD"
+        },
+        "fieldsOfStudy": [
+          "Medicine"
+        ],
+        "publicationTypes": [
+          "JournalArticle"
+        ],
+        "publicationDate": "2022-01-07",
+        "authors": [
+          {
+            "authorId": "12727909",
+            "name": "C. Yek"
+          },
+          {
+            "authorId": "108817533",
+            "name": "S. Warner"
+          },
+          {
+            "authorId": "47541354",
+            "name": "J. Wiltz"
+          },
+          {
+            "authorId": "1808330",
+            "name": "Junfeng Sun"
+          },
+          {
+            "authorId": "49490309",
+            "name": "S. Adjei"
+          },
+          {
+            "authorId": "2149110286",
+            "name": "A. Mancera"
+          },
+          {
+            "authorId": "2483652",
+            "name": "B. Silk"
+          },
+          {
+            "authorId": "145134171",
+            "name": "A. Gundlapalli"
+          },
+          {
+            "authorId": "1961575",
+            "name": "A. Harris"
+          },
+          {
+            "authorId": "32926121",
+            "name": "T. Boehmer"
+          },
+          {
+            "authorId": "2461383",
+            "name": "S. Kadri"
+          }
+        ]
+      }
+    ]
+  }

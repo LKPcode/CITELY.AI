@@ -13,10 +13,20 @@ interface Chat {
 }
 
 
+interface Paper {
+    id?: string;
+    title: string;
+    created_at?: string;
+    workspace_id: string;
+    abstract?: string;
+    author: string;
+    published_at:null;
+}
 
 
 export type {
     Workspace,
     Chat,
+    Paper
 }
 

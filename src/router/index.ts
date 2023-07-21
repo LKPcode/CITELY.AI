@@ -6,6 +6,7 @@ import MainBar from '../components/chat-components/MainBar.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import EmptyMainBar from '../components/EmptyMainBar.vue'
+import PaperSearch from '../components/PaperSearch.vue'
 
 const routes = [
   {
@@ -35,6 +36,13 @@ const routes = [
     path: '/workspace/:workspace_id/library',
     name: 'LibraryView',
     component: LibraryView,
+    children: [
+      {
+        path: 'search',
+        name: 'SearchView',
+        component: PaperSearch,
+      }
+    ]
   },
   {
     path: '/',
