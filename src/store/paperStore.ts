@@ -26,6 +26,7 @@ export default function usePaperStore () {
     })
 
     initPaperList(all_filtered_papers)
+    selectPaper(null)
    
   }
 
