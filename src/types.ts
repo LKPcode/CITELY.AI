@@ -22,6 +22,8 @@ interface Paper {
     authors: any[];
     paper_url?: string;
     published_at:null;
+    publication_venue: string;
+    status: string;
 }
 
 
