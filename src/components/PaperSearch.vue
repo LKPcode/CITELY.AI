@@ -46,7 +46,7 @@
         <svg class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
           <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
         </svg>
-        <input v-model="search_query" 
+        <input ref="search_field" v-model="search_query" 
                 @keypress.enter="search(0)"
 
         type="text" class="h-12 w-full border-0 bg-transparent pl-11 pr-4 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm" placeholder="Search for Title or Describe paper" role="combobox" aria-expanded="false" aria-controls="options">
@@ -79,7 +79,7 @@
 
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import PaperSearchList from './PaperSearchList.vue';
 import PaperSearchNavigation from './PaperSearchNavigation.vue';
 import { useRouter } from 'vue-router'
@@ -88,7 +88,16 @@ import { useRouter } from 'vue-router'
 
 import semmantic_api from "../api/semmantic_api.ts"
 
-const papers = ref([])
+
+// On mount, focus the search field
+const search_field = ref<any>(null)
+onMounted(() => {
+  if (search_field.value)
+    search_field.value.focus()
+})
+
+
+const papers = ref<any[]|null>([])
 
 const search_query = ref('')
 const search_bar_expanded = ref(false)
@@ -100,8 +109,16 @@ const total_papers = ref(0)
 const search = async (page_num:number=0) => {
     searching.value = true
     try {
+        papers.value = null
         const res = await semmantic_api.queryPapers(search_query.value, page_num)
-        papers.value = res.data
+        if(res.total == 0) {
+            console.log('no papers found')
+            papers.value = []
+        }
+        else{
+          papers.value = res.data
+        }
+        console.log(res)
         total_papers.value = res.total
         searching.value = false
     } catch (error) {
