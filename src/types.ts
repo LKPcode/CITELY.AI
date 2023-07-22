@@ -20,7 +20,9 @@ interface Paper {
     workspace_id: string;
     abstract?: string;
     authors: any[];
+    paper_url?: string;
     published_at:null;
+    publication_venue:string;
 }
 
 
