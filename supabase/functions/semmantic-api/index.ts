@@ -32,15 +32,24 @@ serve(async (req: Request) => {
     try{
      let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,abstract,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
 
+      if (error) {
+        throw error
+      }
+
      return new Response(
         JSON.stringify(data),
-        { headers: headers }
+        { 
+          headers: headers,
+          status: 200 
+        },
      )
 
     } catch (error) {
       return new Response(
         JSON.stringify({ error }),
-        { headers: headers }
+        { headers: headers,
+          status: 400
+        }
       )
     }
 

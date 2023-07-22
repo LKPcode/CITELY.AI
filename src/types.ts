@@ -21,6 +21,7 @@ interface Paper {
     abstract?: string;
     authors: any[];
     published_at:null;
+    status: string;
 }
 
 

@@ -44,7 +44,7 @@
 
             </div>
         </div>
-        <div class="flex flex-none items-center gap-x-4">
+        <div v-if="!paper_error" class="flex flex-none items-center gap-x-4">
             <button v-if="!adding_paper && !paper_added" @click="addPaperToWorkspace(paper)"
                 class=" rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block">
                 Add to Workspace
@@ -54,12 +54,19 @@
                 <img class="w-4 animate-spin" src="../components/icons/Loading.svg" alt="">
             </button>
             <button v-if="paper_added && !adding_paper"
-                class=" rounded-md bg-red-300 px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-red-400 sm:block">
-                Remove from Workspace
+                class=" flex items-center rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                <span>Remove from Workspace</span>
+                <img class="ml-2" src="../components//icons/Check.svg" alt="">
             </button>
-
-
         </div>
+        <div v-else-if="paper_error" class="flex flex-none items-center gap-x-4">
+            <button
+                class=" rounded-md bg-red-300 px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-red-300 sm:block">
+                Paper could not be found
+            </button>
+        </div>
+
+
 
 
     </li>
@@ -70,6 +77,7 @@ import semmantic_api from '../api/semmantic_api';
 import { useRoute } from 'vue-router';
 import usePaperStore from '../store/paperStore';
 import { ref } from 'vue';
+import { Paper } from '../types';
 
 const { paper } = defineProps<{
     paper: any
@@ -77,6 +85,7 @@ const { paper } = defineProps<{
 
 const adding_paper = ref(false)
 const paper_added = ref(false)
+const paper_error = ref(false)
 
 
 const paper_store = usePaperStore()
@@ -85,16 +94,16 @@ const addPaperToWorkspace = async (paper: any) => {
     try {
         adding_paper.value = true
         const response = await semmantic_api.addPaperToWorkspace(paper, route.params.workspace_id as string)
-        console.log(response)
-        paper_store.addPaper(paper)
+        let new_paper = response.paper
+        console.log("Added Paper to workspace", new_paper)
+        paper_store.addPaper(new_paper as Paper)
+        paper_store.selectPaper(new_paper as Paper)
         adding_paper.value = false
         paper_added.value = true
 
     } catch (e) {
         console.log(e)
-        
-
-
+        paper_error.value = true
     }
 }
 
