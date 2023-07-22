@@ -14,7 +14,7 @@ const headers = {
   "Access-Control-Allow-Headers": "apikey, X-Client-Info, Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
 }
 
-serve(async (req) => {
+serve(async (req: Request) => {
 
   // This is needed if you're planning to invoke your function from a browser.
   if (req.method === 'OPTIONS') {
@@ -30,7 +30,7 @@ serve(async (req) => {
     let offset = papers_per_page*page_num
 
     try{
-     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
+     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,abstract,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
 
      return new Response(
         JSON.stringify(data),

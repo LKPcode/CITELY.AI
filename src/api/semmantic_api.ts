@@ -9,7 +9,19 @@ const { data, error } = await supabase.functions.invoke('semmantic-api', {
   })
 
     if (error) {
-        console.log(error)
+        throw error
+    }
+
+    return data
+}
+
+const addPaperToWorkspace = async (paper: any, workspace_id: string) => {
+    const { data, error } = await supabase.functions.invoke('add_paper_to_workspace', {
+        body: {paper, workspace_id}
+    })
+
+    if (error) {
+       throw error
     }
 
     return data
@@ -17,4 +29,7 @@ const { data, error } = await supabase.functions.invoke('semmantic-api', {
 
 
 
-export default {queryPapers}
+export default {
+  queryPapers,
+  addPaperToWorkspace
+}

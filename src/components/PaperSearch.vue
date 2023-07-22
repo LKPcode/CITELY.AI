@@ -57,7 +57,7 @@
     <ul :class="{'h-[70vh]': search_bar_expanded, 'h-[0vh]': !search_bar_expanded}"
         class="transition-all delay-700 duration-700 overflow-auto px-4   text-sm text-gray-800" id="options" role="listbox">
       
-       <PaperSearchList :papers="papers"/>
+       <PaperSearchList :papers="papers" />
     </ul>
 
 

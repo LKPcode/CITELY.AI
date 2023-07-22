@@ -62,8 +62,8 @@
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     {{ paper.published_at }}
                   </td>
-                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                    {{ paper.author }}
+                  <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 w-[200px] truncate">
+                    {{  }}
                   </td>
                   <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                     ready

@@ -19,7 +19,7 @@ interface Paper {
     created_at?: string;
     workspace_id: string;
     abstract?: string;
-    author: string;
+    authors: any[];
     published_at:null;
 }
 
