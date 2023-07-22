@@ -6,10 +6,10 @@
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
     },
     {
-        "id":2,
+        "id": 2,
         "convo_id": 1,
         "author": "AI",
-        "content":[
+        "content": [
             {
                 "type": "status",
                 "status_type": "understanding",
@@ -40,7 +40,30 @@
             },
             {
                 "type": "answer",
-                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."            
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem impsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel libero euismod, ultricies nunc sed, aliquam nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl. Sed euismod, nisl quis aliquet ultricies, nunc nisl aliquam nisl, sed aliquam nisl nisl euismod nisl."
+            }
+        ],
+        "sources": [
+            {
+                "title": "The position of women in Corfu as demonstrated in the notarial registers during the last century of the Venetian period",
+                "paper_id": "115",
+                "published_at": "2022-08-31",
+                "section": "unknown",
+                "passage": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in “advanced” countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation. It will certainly subject human beings to greater indignities and inflict greater damage on the natural world, it will probably lead to greater social disruption and psychological suffering, and it may lead to increased physical suffering even in “advanced” countries."
+            },
+            {
+                "title": "The global k-means clustering algorithm",
+                "paper_id": "126",
+                "published_at": "2003-02-01",
+                "section": "unknown",
+                "passage": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in “advanced” countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation. It will certainly subject human beings to greater indignities and inflict greater damage on the natural world, it will probably lead to greater social disruption and psychological suffering, and it may lead to increased physical suffering even in “advanced” countries."
+            },
+            {
+                "title": "How To Increase Purchase Intention To Hello Baby Product",
+                "paper_id": "137",
+                "published_at": "2022-07-27",
+                "section": "unknown",
+                "passage": "The Industrial Revolution and its consequences have been a disaster for the human race. They have greatly increased the life-expectancy of those of us who live in “advanced” countries, but they have destabilized society, have made life unfulfilling, have subjected human beings to indignities, have led to widespread psychological suffering (in the Third World to physical suffering as well) and have inflicted severe damage on the natural world. The continued development of technology will worsen the situation. It will certainly subject human beings to greater indignities and inflict greater damage on the natural world, it will probably lead to greater social disruption and psychological suffering, and it may lead to increased physical suffering even in “advanced” countries."
             }
         ]
     }

@@ -26,6 +26,14 @@ interface Paper {
     status: string;
 }
 
+interface Source {
+    title: string,
+    paper_id?: string;
+    published_at?: string;
+    section: string,
+    passage: string
+}
+
 
 export type {
     Workspace,

@@ -18,20 +18,19 @@
         <div class="grow overflow-auto">
 
             <!-- SOURCE COMPONENT -->
-            <div v-for=" in [1,2,3,4,5,6,7,8,9]" class="border-b border-grayer px-4 py-2">
+            <div v-for=" source in sources_store.source_list.value" class="border-b border-grayer px-4 py-2">
                 <div class="mx-2 border-b border-grayer text-sm">
                     <div class="flex items-center mb-1">
-                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Title: </span> Bitcoin: A Peer-to-Peer Electronic Cash System </span>
+                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Title: </span> {{source.title}}</span>
                         <button @click="openPDF" class="border-2 px-3 rounded-full border-accent hover:bg-accent "> Open </button>
                     </div>
                     <div class="flex items-center text-xs mb-2">
-                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Section: </span> Privacy </span>
-                        <span class="text-grayest font-semibold">Published: Oct 2008</span>
+                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Section: </span> {{ source.section }} </span>
+                        <span class="text-grayest font-semibold">Published: {{ source.published_at }}</span>
                     </div>
                 </div>
                 <div class="m-2 text-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, expedita vero alias mollitia deleniti laborum dolore omnis, aliquam, vel cupiditate maxime nulla. Alias labore iure enim totam ad? Odit, qui.
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae, non nulla magnam a ut dolores nisi aspernatur.
+                    {{ source.passage }}
                 </div>
             </div>
 
@@ -53,7 +52,9 @@
 // useRouter
 import { useRouter, useRoute } from "vue-router";
 import {sidebarStore} from "../store/sidebarStore";
+import useSourcesStore from '../store/sourcesStore';
 
+const  sources_store = useSourcesStore();
 const {showSidebar} = sidebarStore();
 
 // Open PDF
@@ -64,5 +65,9 @@ const openPDF = () => {
   showSidebar.value = false;
   router.push(`/workspace/${current_workspace}/paper/1`);
 };
+
+
+
+
 
 </script>

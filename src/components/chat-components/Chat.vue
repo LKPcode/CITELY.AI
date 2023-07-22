@@ -19,6 +19,10 @@
 import UserQuery from './UserQuery.vue';
 import AgentResponse from './AgentResponse.vue';
 import chat from "./api_spec.json"
+import useSourcesStore from '../../store/sourcesStore';
+const  sources_store = useSourcesStore();
+
+sources_store.initSourceList(chat[1].sources as any);
 
 
 

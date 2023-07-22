@@ -68,7 +68,6 @@ serve(async (req: Request) => {
         published_at: paper.publicationDate,
         paper_url: pdf_url,
         pdf_path: paper.paperId + "_" + random + ".pdf" ,
-        publication_venue: paper.publicationVenue.name,
       }).select().single()
 
     if (paper_error) {
