@@ -44,7 +44,15 @@
 
             </div>
         </div>
-        <div v-if="!paper_error" class="flex flex-none items-center gap-x-4">
+
+        <div v-if="paper_store.paper_list.value.find((p) => (p.semantic_id == paper.paperId))" class="flex flex-none items-center gap-x-4">
+            <button 
+                class=" flex items-center rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                <span>Remove from Workspace</span>
+                <img class="ml-2" src="../components//icons/Check.svg" alt="">
+            </button>
+        </div>
+        <div v-else-if="!paper_error" class="flex flex-none items-center gap-x-4">
             <button v-if="!adding_paper && !paper_added" @click="addPaperToWorkspace(paper)"
                 class=" rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block">
                 Add to Workspace
@@ -53,11 +61,6 @@
                 class=" rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block">
                 <img class="w-4 animate-spin" src="../components/icons/Loading.svg" alt="">
             </button>
-            <button v-if="paper_added && !adding_paper"
-                class=" flex items-center rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                <span>Remove from Workspace</span>
-                <img class="ml-2" src="../components//icons/Check.svg" alt="">
-            </button>
         </div>
         <div v-else-if="paper_error" class="flex flex-none items-center gap-x-4">
             <button
@@ -65,6 +68,7 @@
                 Paper could not be found
             </button>
         </div>
+
 
 
 

@@ -24,6 +24,9 @@ interface Paper {
     published_at:null;
     publication_venue: string;
     status: string;
+    semantic_id?: string;
+    pdf_path?: string;
+    paper_url?: string;
 }
 
 

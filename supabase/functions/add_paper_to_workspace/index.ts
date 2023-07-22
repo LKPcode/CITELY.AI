@@ -69,6 +69,7 @@ serve(async (req: Request) => {
         paper_url: pdf_url,
         pdf_path: paper.paperId + "_" + random + ".pdf" ,
         publication_venue: paper.publicationVenue.name,
+        semantic_id: paper.paperId,
       }).select().single()
 
     if (paper_error) {
@@ -90,8 +91,6 @@ serve(async (req: Request) => {
   }
 })
 
-// To invoke:
-// curl -i --location --request POST 'http://localhost:54321/functions/v1/' \
-//   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
-//   --header 'Content-Type: application/json' \
-//   --data '{"name":"Functions"}'
+
+// Deploy Command
+// npx supabase functions deploy add_paper_to_workspace --project-ref cejmnhihtbftrrelxhwu
