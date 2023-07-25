@@ -6,21 +6,23 @@
                         <span class="text-accent ml-2 mt-1 text-md font-bold">Final Answer</span>
                     </div>
 
-                    <div class="ml-2 mt-2">
-                        {{ props.answer_body }}
-                    </div>
-
+                    <Renderer :markdown="props.answer_body" class="ml-2 mt-2" />
                 </div>
 </template>
 
 <script lang="ts" setup>
+import Renderer from './Renderer.vue';
 
 const props = defineProps({
     answer_body: {
         type: String,
         required: true
+        
     },
+
 
 })
 
+
 </script>
+

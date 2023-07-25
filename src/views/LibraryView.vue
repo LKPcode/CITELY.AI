@@ -19,10 +19,11 @@
 
                     <div class="mx-4 mt-2.5">
                         <div class="  font-bold">
-                            Workspace 1 <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
+                            {{ workspace_store.selected_workspace.value?.name  }}
+                            <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
                         </div>
                         <div class="text-grayest text-sm ">
-                            The 3 body problem the rise of Attention
+                            Add Papers to your workspace
                         </div>
                     </div>
                 </div>
@@ -31,10 +32,12 @@
             </div>
 
 
+
+
             <!-- Library -->
             <div class="px-12 mb-12 grow flex flex-col">
 
-                <Tabs/>
+                <!-- <Tabs/> -->
                 <div class="grow">
                     <PaperList />
                 </div>
@@ -56,11 +59,12 @@
                             Details
                             <span class="text-grayest text-sm ml-2 font-normal"> (4) </span>
                         </div>
-                        <div class="text-sm mt-1 text-grayest">Click on the sources to view on PDF</div>
+                        <div class="text-sm mt-1 text-grayest">Select a paper to view its information.</div>
                     </div>
                 </div>
 
 
+                <!-- <Tabs /> -->
 
 
                 <!-- RightBar Body -->
@@ -85,15 +89,20 @@
 <script setup lang="ts">
 import PaperMetadata from '../components/PaperMetadata.vue';
 import PaperList from '../components/PaperList.vue';
+import useWorkspaceStore from '../store/workspaceStore';
 // useRouter
 import { RouterView, useRouter } from 'vue-router'
-import Tabs from '../components/Tabs.vue';
+// import Tabs from '../components/Tabs.vue';
 
+
+
+const workspace_store = useWorkspaceStore();
 
 // Back button
 const router = useRouter()
 const goBack = () => {
     router.back()
+
 }
 
 </script>

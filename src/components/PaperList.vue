@@ -44,8 +44,8 @@
                         class="absolute mt-[-10px] top-0 z-30 flex h-10 items-center space-x-3  bg-white ">
                         <!-- <button type="button" class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">Bulk edit</button> -->
                         <button type="button" @click="removeFromLibrary"
-                          class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">Delete
-                          all</button>
+                          class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">
+                          Delete Selected</button>
                       </div>
                     </div>
                   </th>
@@ -100,7 +100,7 @@
                   </td>
 
                   <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                    <a href="#" class="text-accent hover:text-indigo-900">
+                    <a @click.stop="viewPDF(paper.id)" class="text-accent hover:text-indigo-900">
                       Open<span class="sr-only">, {{ paper.title }}</span>
                     </a>
                   </td>
@@ -118,8 +118,9 @@
 import { ref, computed, onMounted } from 'vue'
 import paper_api from '../api/papers_api';
 import usePaperStore from '../store/paperStore';
-import { useRoute } from "vue-router"
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from "vue-router"
+import useSourceStore from '../store/sourcesStore';
+
 
 const router = useRouter()
 
@@ -145,20 +146,6 @@ onMounted(async () => {
 const indeterminate = computed(() => selectedPapers.value.length > 0 && selectedPapers.value.length < paper_store.paper_list.value.length)
 
 
-
-
-//   const addNewPaper = async () => {
-//     console.log("Add new paper")
-//     let new_paper = await paper_api.createPaper({
-//         title: `Sia Kosioni C`, 
-//         workspace_id: workspace_id,
-//         author: "Bill Vinyl",
-//         published_at: null
-
-//     })
-//     paper_store.addPaper(new_paper)
-// }
-
 const removeFromLibrary = async () => {
   try {
     await paper_api.deletePapersOfWorkspace(selectedPapers.value)
@@ -166,6 +153,13 @@ const removeFromLibrary = async () => {
   } catch (error) {
     console.log(error)
   }
+}
+
+const sources_store = useSourceStore()
+const viewPDF = (paper_id: string) => {
+  // Clear the sources 
+  sources_store.initSourceList([])
+  router.push({ name: 'PaperView', params: { workspace_id: workspace_id, paper_id: paper_id } })
 }
 
 </script>

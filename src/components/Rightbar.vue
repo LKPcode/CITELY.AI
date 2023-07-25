@@ -1,5 +1,5 @@
 <template>
-    <div class=" h-full w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
+    <div class=" h-full hidden md:block w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
     //mr-[-400px] transition-all ease-in-out duration-500 sm:duration-700
     ">
         <div class="flex flex-col h-full  min-w-[400px]">
@@ -14,15 +14,17 @@
             </div>
         </div>
 
+        <Tabs class="m-auto" :tabs="tabs" />
+
         <!-- RightBar Body -->
-        <div class="grow overflow-auto">
+        <div v-if="sources_store.source_list.value.length > 0" class="grow overflow-auto">
 
             <!-- SOURCE COMPONENT -->
             <div v-for=" source in sources_store.source_list.value" class="border-b border-grayer px-4 py-2">
                 <div class="mx-2 border-b border-grayer text-sm">
                     <div class="flex items-center mb-1">
                         <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Title: </span> {{source.title}}</span>
-                        <button @click="openPDF" class="border-2 px-3 rounded-full border-accent hover:bg-accent "> Open </button>
+                        <button @click="openPDF(source.paper_id)" class="border-2 px-3 rounded-full border-accent hover:bg-accent "> Open </button>
                     </div>
                     <div class="flex items-center text-xs mb-2">
                         <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Section: </span> {{ source.section }} </span>
@@ -36,6 +38,9 @@
 
 
 
+        </div>
+        <div v-else class="border-l-grayer text-grayest text-sm h-full flex flex-col items-center justify-center">
+            No Sources
         </div>
 
         <!-- FEEDBACK FOOTER -->
@@ -53,6 +58,28 @@
 import { useRouter, useRoute } from "vue-router";
 import {sidebarStore} from "../store/sidebarStore";
 import useSourcesStore from '../store/sourcesStore';
+import Tabs from '../components/Tabs.vue';
+import { ref } from "vue"
+import type { Tab } from "../types"
+
+let tabs = ref<Tab[]>([{
+        name:"Sources",
+        current: true
+    },
+    {
+        name:"Notes",
+        current:false
+    },
+    {
+        name:"Highlights",
+        current:false
+    },
+    {
+        name:"Citations",
+        current:false
+    }
+
+])
 
 const  sources_store = useSourcesStore();
 const {showSidebar} = sidebarStore();
@@ -60,10 +87,10 @@ const {showSidebar} = sidebarStore();
 // Open PDF
 const router = useRouter();
 const route = useRoute();
-const openPDF = () => {
+const openPDF = (paper_id: string) => {
   let current_workspace = route.params.workspace_id; 
   showSidebar.value = false;
-  router.push(`/workspace/${current_workspace}/paper/1`);
+  router.push(`/workspace/${current_workspace}/paper/${paper_id}`);
 };
 
 

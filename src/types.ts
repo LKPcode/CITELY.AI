@@ -38,9 +38,16 @@ interface Source {
 }
 
 
+interface Tab {
+    name: string,
+    current: boolean
+}
+
+
 export type {
     Workspace,
     Chat,
-    Paper
+    Paper,
+    Tab
 }
 

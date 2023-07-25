@@ -24,14 +24,21 @@
 
         <!-- SIDEBAR BODY -->
 
-        <div class="mx-4 mb-4 grow">
+        <div class="grow relative">
 
-            <!-- Chats -->
-            <ChatsList />
+            <div class="px-4 absolute top-0 h-3/5 w-full">
+                <!-- Chats -->
+                <ChatsList />
+            </div>
+    
 
 
-            <!-- Workspaces -->
-            <WorkspaceList />
+            <div class="px-4 absolute top-[60%] h-2/5 w-full border-t border-grayer mt-2">
+                <!-- Workspaces -->
+                <WorkspaceList />
+            </div>
+
+           
 
         </div>
 

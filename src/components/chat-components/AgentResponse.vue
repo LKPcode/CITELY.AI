@@ -31,10 +31,10 @@
 
                 <AgentFinalAnswer 
                         v-if="res.type == 'answer'"
-                        :answer_body="res.text"
+                        :answer_body="res.text + '\n# Hello\n' + text"
                         class="mt-4"
-                
                 />
+
             </div>
 
 
@@ -47,6 +47,11 @@
 <script lang="ts" setup>
 import AgentStep from "./AgentStep.vue";
 import AgentFinalAnswer from "./AgentFinalAnswer.vue";
+
+
+import { ref } from 'vue'
+
+const text = ref('')
 
 
 const {content} = defineProps<({
