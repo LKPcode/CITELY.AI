@@ -12,11 +12,12 @@
                 </div>
 
                 <div class="mx-4 mt-2.5">
-                    <div class="  font-bold">
-                        Workspace 1 <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
+                    <div v-if="selected_workspace" class="  font-bold">
+                       {{ selected_workspace.name }}
+                        <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
                     </div>
-                    <div class="text-grayest text-sm ">
-                        The 3 body problem the rise of Attention
+                    <div v-if="paper" class="text-grayest text-sm ">
+                        {{paper.title}}
                     </div>
                 </div>
             </div>
@@ -50,12 +51,19 @@
 import { useRouter, useRoute } from 'vue-router'
 import { sidebarStore } from '../store/sidebarStore';
 import papers_api from '../api/papers_api';
-import { onMounted, ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
+import { Paper } from '../types';
+import useWorkspaceStore from '../store/workspaceStore';
 
 import View404 from './View404.vue'
 
+
 const route = useRoute()
 const {showSidebar} = sidebarStore();
+
+const {selected_workspace} = useWorkspaceStore()
+
+const paper = ref<Paper|null>(null)
 
 
 let object_url: any = null
@@ -63,14 +71,29 @@ const render_pdf = ref(false)
 const error = ref(false)
 
 onMounted(async () => {
+    await getPDFObjecURL()
+})
+
+
+watch(() => route.params.paper_id, async (paper_id) => {
+    if (paper_id==null) {
+        return 
+    }
+    render_pdf.value = false
+    error.value = false
+    await getPDFObjecURL()
+})
+
+
+const getPDFObjecURL = async () => {
     try{
         showSidebar.value = false;
 
         let paper_id = route.params.paper_id;
         console.log(paper_id)
-        let paper = await papers_api.getPaper(paper_id as string)
-        console.log(paper)
-        let pdf_path = paper.pdf_path
+        paper.value = await papers_api.getPaper(paper_id as string)
+        console.log(paper.value)
+        let pdf_path = paper.value.pdf_path
 
         object_url = await papers_api.downloadPDF(pdf_path as string)
 
@@ -80,17 +103,15 @@ onMounted(async () => {
         console.log(e)
         error.value = true
     }
-    
-
-})
+}
 
 
 // Back button
-
 const router = useRouter()
-const goBack = () => {
-    showSidebar.value = true
+const goBack = () => {    
     router.back()
+    showSidebar.value = true
+
 }
 
 </script>

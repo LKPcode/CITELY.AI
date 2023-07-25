@@ -1,7 +1,7 @@
 <template>
     <!-- Worksapces -->
-    <div class="h-2/5 flex flex-col">
-        <div class="uppercase text-center font-bold text-sm text-slate-600 my-2">
+    <div class="h-full flex flex-col">
+        <div class="uppercase text-center font-bold text-sm text-slate-600 my-2 ">
             Workspaces
         </div>
         <div class="grow overflow-auto hide-scrollbar">
@@ -20,7 +20,7 @@
         </div>
 
         <div @click="createNewWorkspace"
-            class="flex items-center p-2 bg-cyan-50 hover:bg-cyan-100  rounded-xl cursor-pointer  ">
+            class="flex items-center p-2 mb-2 bg-cyan-50 hover:bg-cyan-100  rounded-xl cursor-pointer  ">
             <img src="../../components/icons/NewChat.svg" class="w-7 ml-2" alt="Add Paper">
             <div class="ml-4 text-sm grow font-semibold">
                 New Workspace

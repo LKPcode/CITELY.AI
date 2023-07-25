@@ -4,7 +4,7 @@
             <div class=" w-[80%] max-w-[800px] text-sm py-4 relative min-h-[60px] flex items-center">
 
                 <span>
-                    {{text}}
+                    <Renderer :markdown="text" />
                 </span>
 
                 <div class="absolute -left-12 top-3.5 w-8 h-8 bg-accent rounded-full"></div>
@@ -14,9 +14,14 @@
 </template>
 
 <script lang="ts" setup>
+import Renderer from './Renderer.vue';
 
 const {text} = defineProps({
-    text: String,
+    text: {
+        type: String,
+        required: true
+    }
+
 });
 
 

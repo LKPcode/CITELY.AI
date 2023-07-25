@@ -1,6 +1,6 @@
 <template>
     <!-- CHATS -->
-    <div class="h-3/5 flex flex-col">
+    <div class="h-full flex flex-col">
         <div class="uppercase mt-4 text-center font-bold text-sm text-slate-600 my-2">
             CHATS
         </div>

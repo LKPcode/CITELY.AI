@@ -25,3 +25,53 @@ html, body, #app {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+
+  /* HEADER STYLES FOR MATHPIX MARKDOWN RENDERER because tailwind dletes all styles of basic elements like h1 nad button */
+/* Style for h1 */
+h1 {
+  font-size: 1.6rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 1.5rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
+
+/* Style for h2 */
+h2 {
+  font-size: 1.5rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 1.25rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
+
+/* Style for h3 */
+h3 {
+  font-size: 1.4rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 1rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
+
+/* Style for h4 */
+h4 {
+  font-size: 1.3rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 0.75rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
+
+/* Style for h5 */
+h5 {
+  font-size: 1.2rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 0.5rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
+
+/* Style for h6 */
+h6 {
+  font-size: 1.1rem; /* You can adjust the size as needed */
+  font-weight: bold;
+  margin: 0.25rem 0; /* Adjust top and bottom margins as needed */
+  line-height: 1.4; /* Increase line-height for two-line headers */
+}
