@@ -1,5 +1,8 @@
 import supabase from "./supabase_instance";
 
+let localUser;
+let temp;
+
 // Register a new user
 const register = async (email: string, password: string) => {
     const { data, error } = await supabase.auth.signUp({
@@ -27,10 +30,23 @@ const login = async (email: string, password: string) => {
     return { data, error };
 }
 
+async function getUser(next) {
+    localUser = await supabase.auth.getSession();
+      if ( localUser.data.session == null) {
+          next('/')
+      }
+      else {
+        next();
+      }
+     localUser.data.session = temp;
+  }
 
 export default {
     register,
-    login
+    login,
+    localUser,
+    temp,
+    getUser
 }
 
 

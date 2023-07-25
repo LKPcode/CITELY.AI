@@ -7,6 +7,11 @@ import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import EmptyMainBar from '../components/EmptyMainBar.vue'
 import PaperSearch from '../components/PaperSearch.vue'
+import userState from '../composables/store.ts' 
+import authentication_api from '../api/authentication_api.ts'
+
+
+
 
 const routes = [
   {
@@ -30,7 +35,8 @@ const routes = [
         name: 'MainBar',
         component: MainBar,
       }
-    ]
+    ],
+    meta: { requiresAuth: true }
   },
   {
     path: '/workspace/:workspace_id/library',
@@ -55,9 +61,38 @@ const routes = [
     component: Register,
   },
 ]
+
+
+
+
 const router = createRouter({
   history: createWebHistory("/"),
   routes
 })
+
+
+
+
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+      if (to.path !== '/') {
+          authentication_api.getUser(next);
+      } 
+      else{
+          next();
+      }
+  } else {
+      next();
+  }
+  //  if ( authentication_api.temp !== null && to.path == '/') {
+  //      next('/workspace/0/chat/0');
+  // }
+
+});
+
+
+
+
 
 export default router

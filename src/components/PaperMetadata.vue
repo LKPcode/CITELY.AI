@@ -26,16 +26,16 @@
         </div>
        
         <!-- Links -->
-        <div class="uppercase text-sm font-bold text-gray-600 mb-2"> Links </div>
+        <div class="uppercase text-sm font-bold text-gray-600 mb-0"> Links </div>
 
-        <a class="text-sm font-medium text-blue-500 mb-2 truncate h-12 hover:underline"
+        <a class="text-sm font-medium text-blue-500 mb-4 truncate h-12 hover:underline"
             :href="paper_store.selected_paper.value.paper_url" target="_blank">
             {{ paper_store.selected_paper.value.paper_url }}
         </a>
 
         <!-- Abstract -->
-        <div class="uppercase text-sm font-bold text-gray-600 mb-2"> ABSTRACT </div>
-        <div class="text-sm font-medium text-gray-600 mb-4  overflow-auto hide-scrollbar">
+        <div class="uppercase text-sm font-bold text-gray-600 mt-2"> ABSTRACT </div>
+        <div class="text-sm font-medium text-gray-600 mt-2 overflow-auto hide-scrollbar">
             {{ paper_store.selected_paper.value.abstract }}
         </div>
     </div>

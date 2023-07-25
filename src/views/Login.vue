@@ -78,6 +78,8 @@
 <script lang="ts" setup>
 import authentication_api from '../api/authentication_api.ts'
 import { ref } from 'vue'
+
+
 // import router
 import { useRouter } from 'vue-router'
 
@@ -92,8 +94,14 @@ const login = async () => {
   try {
     const response = await authentication_api.login(credentials.value.email, credentials.value.password);
     console.log(response)
+   
     router.push('/workspace/0/chat/0')
-  } catch (error) {
+
+
+  } 
+  
+  
+  catch (error) {
     console.log(error)
   }
 }
