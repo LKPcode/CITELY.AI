@@ -15,14 +15,15 @@
                 <input v-model="credentials.email" id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
             </div>
-  
             <div>
               <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
               <div class="mt-2">
                 <input v-model="credentials.password" id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
               </div>
+              <div v-if="passwordError" class="error">
+              {{ passwordError }}
             </div>
-  
+            </div>
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600" />
@@ -49,11 +50,11 @@
               </div>
             </div>
   
-            <div class="mt-6 grid grid-cols-2 gap-4">
-              <a href="#" class="flex w-full items-center justify-center gap-3 rounded-md bg-[#DB4437] px-2 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]">
+            <div  class="mt-6 grid grid-cols-2 gap-4">
+              <div @click="authentication_api.googleAuth"  class="flex w-full items-center justify-center gap-3 rounded-md bg-[#DB4437] px-2 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]">
                 <svg class=" w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
                 <span class="text-sm font-semibold leading-6">Google</span>
-              </a>
+              </div>
   
               <a href="#" class="flex w-full items-center justify-center gap-3 rounded-md bg-[#24292F] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]">
                 <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
@@ -76,19 +77,52 @@
 
 <script lang="ts" setup>
 import authentication_api from '../api/authentication_api.ts'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 // import router
 import { useRouter } from 'vue-router'
+
+let meetsRequir = false;
 
 const credentials = ref({
   email: '',
   password: ''
 })
 
+const passwordError = computed(() => {
+  meetsRequir = false;
+
+  if (!/[0-9]/.test(credentials.value.password)) {
+    meetsRequir = false;
+    return 'Password must contain at least one number'
+  }
+  if (!/[A-Z]/.test(credentials.value.password)) {
+    meetsRequir = false;
+    return 'Password must contain at least one capital letter'
+  }
+  if (!/[^A-Za-z0-9]/.test(credentials.value.password)) {
+    meetsRequir = false;
+    return 'Password must contain at least one special character'
+  }
+  if (credentials.value.password.length < 8) {
+    meetsRequir = false;
+    return 'Password must be at least 8 characters long'
+  }
+  else {
+    meetsRequir = true; 
+    return ''
+  }
+})
+
+
+
 // Register Function
 const router = useRouter()
 const register = async () => {
   try {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,80}$/;
+    if (!passwordRegex.test(credentials.value.password)) {
+      throw new Error('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character, and be at least 8 characters long.');
+    }
     const response = await authentication_api.register(credentials.value.email, credentials.value.password);
     console.log(response)
     router.push('/workspace/0/chat/0')
@@ -96,5 +130,6 @@ const register = async () => {
     console.log(error)
   }
 }
+
 
 </script>

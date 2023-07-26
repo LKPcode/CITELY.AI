@@ -49,12 +49,12 @@
           </div>
 
           <div class="mt-6 grid grid-cols-2 gap-4">
-            <a href="#" class="flex w-full items-center justify-center gap-3 rounded-md bg-[#DB4437] px-2 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]">
+            <div @click="authentication_api.googleAuth"  class="flex w-full items-center justify-center gap-3 rounded-md bg-[#DB4437] px-2 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D9BF0]">
               <svg class="w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                 <path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path>
               </svg>
               <span class="text-sm font-semibold leading-6">Google</span>
-            </a>
+            </div>
 
             <a href="#" class="flex w-full items-center justify-center gap-3 rounded-md bg-[#24292F] px-3 py-1.5 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#24292F]">
               <svg class="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
