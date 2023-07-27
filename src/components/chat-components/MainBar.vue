@@ -18,7 +18,7 @@
             <div class="mx-4 mt-2.5">
                 <div class="  font-bold">
                     {{ selected_workspace?.name }}
-                    <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
+                    <span  class="text-xs ml-2 underline text-grayest font-normal"> {{ selected_workspace?.paper_num }} Papers</span>
                 </div>
                 <div class="text-grayest text-sm ">
                     {{ selected_chat?.name }}

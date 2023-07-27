@@ -13,6 +13,14 @@ const getWorkspaces = async (): Promise<Workspace[]> => {
     return data as Workspace[];
 }
 
+const getWorkspace = async (workspace_id: string): Promise<Workspace> => {
+    const { data, error } = await supabase.from('workspace').select('*').match({ id: workspace_id }).single();
+    if (error) {
+        throw error;
+    }
+    return data as Workspace;
+}
+
 
 const createWorkspace = async (workspace: Workspace): Promise<Workspace> => {
     const { data, error } = await supabase.from('workspace').insert(workspace).select().single();
@@ -23,10 +31,20 @@ const createWorkspace = async (workspace: Workspace): Promise<Workspace> => {
 }
 
 
+const deleteWorkspace = async (workspace_id: string): void => {   
+    const { data, error } = await supabase.from('workspace').delete().match({ id: workspace_id })
+    
+    if (error) {
+        throw error;
+    }
+}
+
 
 
 
 export default {
     getWorkspaces,
-    createWorkspace
+    getWorkspace,
+    createWorkspace,
+    deleteWorkspace
 }

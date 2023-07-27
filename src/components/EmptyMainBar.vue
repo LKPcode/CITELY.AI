@@ -15,10 +15,10 @@
 
                 <div class="mx-4 mt-2.5">
                     <div class="  font-bold">
-                        {{ selected_workspace?.name }} <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
+                        {{ selected_workspace?.name }} <span class="text-xs ml-2 underline text-grayest font-normal">{{ selected_workspace?.paper_num }} Papers</span>
                     </div>
                     <div class="text-grayest text-sm ">
-                        The 3 body problem the rise of Attention
+                        Start a new chat
                     </div>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <h3 class="mt-2 text-sm font-semibold text-gray-900">No Chat selected</h3>
             <p class="mt-1 text-sm text-gray-500">Get started by creating a new chat for this workspace.</p>
             <div class="mt-6">
-                <button type="button"
+                <button @click="createNewChat" type="button"
                     class="inline-flex items-center rounded-md bg-accent px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                     <!-- <img src="../components/icons/NewChat.svg" fill="#fff" alt=""> -->
                     New Chat
@@ -52,11 +52,34 @@
 <script setup lang="ts">
 import { sidebarStore } from '../store/sidebarStore';
 import useWorkspaceStore from '../store/workspaceStore';
+import chat_api from '../api/chats_api';
+import useChatStore from '../store/chatStore';
+import { useRouter, useRoute } from 'vue-router';
+
 
 const { selected_workspace } = useWorkspaceStore();
 
 const { showSidebar } = sidebarStore();
 
 
+
+const chat_store = useChatStore()
+const router = useRouter()
+const route = useRoute()
+// Create new chat
+const createNewChat = async () => {
+    let workspace_id = route.params.workspace_id as string
+    console.log("Create new chat")
+    let new_chat = await chat_api.createChat({
+        name: `Chat ${chat_store.chat_list.value.length + 1}`, 
+        workspace_id: workspace_id
+    })
+    chat_store.addChat(new_chat)
+    goToChat(new_chat)
+}
+
+const goToChat = (chat:any) => {
+    router.push({name: "MainBar", params: { chat_id: chat.id}})
+}
 
 </script>

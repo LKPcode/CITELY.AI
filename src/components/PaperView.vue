@@ -7,8 +7,8 @@
             <div class="flex">
 
                 <div @click="goBack"   
-                class="bg-lightgray rounded-xl p-2 m-2 cursor-pointer">
-                    <img src="../components/icons/Back.svg" class="w-8" alt="">
+                class="bg-lightgray rounded-xl p-2 m-2 cursor-pointer w-12 min-w-12">
+                    <img src="../components/icons/Back.svg" class="" alt="">
                 </div>
 
                 <div class="mx-4 mt-2.5">
@@ -16,7 +16,7 @@
                        {{ selected_workspace.name }}
                         <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
                     </div>
-                    <div v-if="paper" class="text-grayest text-sm ">
+                    <div v-if="paper" class="text-grayest text-sm truncate">
                         {{paper.title}}
                     </div>
                 </div>

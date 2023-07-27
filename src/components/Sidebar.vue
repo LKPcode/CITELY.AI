@@ -43,13 +43,7 @@
         </div>
 
 
-        <div class="border-t justify-self-end border-grayer">
-            <div class="flex items-center hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
-                <img src="../components/icons/Settings.svg" class="w-6" alt="">
-                <div class="font-bold text-sm ml-4">Settings</div>
-            </div>
-
-        </div>
+       <SettingsMenu/>
 
         
 
@@ -67,6 +61,7 @@ import ChatsList from "./sidebar-components/ChatsList.vue";
 
 import {sidebarStore} from "../store/sidebarStore";
 import { useRouter, useRoute } from "vue-router";
+import SettingsMenu from "./SettingsMenu.vue";
 
 
 const {showSidebar} = sidebarStore();

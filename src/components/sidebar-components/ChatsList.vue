@@ -118,7 +118,6 @@ const createNewChat = async () => {
     })
     chat_store.addChat(new_chat)
     goToChat(new_chat)
-
 }
 
 // Go to chat

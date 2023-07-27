@@ -41,12 +41,19 @@ async function getUser(next) {
      localUser.data.session = temp;
   }
 
+
+  const logout = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (error) throw error;
+  }
+
 export default {
     register,
     login,
     localUser,
     temp,
-    getUser
+    getUser,
+    logout
 }
 
 

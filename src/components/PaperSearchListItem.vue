@@ -45,6 +45,7 @@
             </div>
         </div>
 
+        
         <div v-if="paper_store.paper_list.value.find((p) => (p.semantic_id == paper.paperId))" class="flex flex-none items-center gap-x-4">
             <button 
                 class=" flex items-center rounded-md bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
@@ -82,6 +83,7 @@ import { useRoute } from 'vue-router';
 import usePaperStore from '../store/paperStore';
 import { ref } from 'vue';
 import { Paper } from '../types';
+import useWorkspaceStore from '../store/workspaceStore';
 
 const { paper } = defineProps<{
     paper: any
@@ -94,6 +96,7 @@ const paper_error = ref(false)
 
 const paper_store = usePaperStore()
 const route = useRoute()
+const workspace_store = useWorkspaceStore()
 const addPaperToWorkspace = async (paper: any) => {
     try {
         adding_paper.value = true
@@ -104,6 +107,8 @@ const addPaperToWorkspace = async (paper: any) => {
         paper_store.selectPaper(new_paper as Paper)
         adding_paper.value = false
         paper_added.value = true
+        if (workspace_store.selected_workspace.value != null && workspace_store.selected_workspace.value.paper_num != null)
+            workspace_store.selected_workspace.value.paper_num += 1
 
     } catch (e) {
         console.log(e)

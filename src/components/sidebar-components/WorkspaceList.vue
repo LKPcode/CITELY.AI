@@ -20,7 +20,7 @@
         </div>
 
         <div @click="createNewWorkspace"
-            class="flex items-center p-2 mb-2 bg-cyan-50 hover:bg-cyan-100  rounded-xl cursor-pointer  ">
+            class="flex items-center p-2 mb-4 bg-cyan-50 hover:bg-cyan-100  rounded-xl cursor-pointer  ">
             <img src="../../components/icons/NewChat.svg" class="w-7 ml-2" alt="Add Paper">
             <div class="ml-4 text-sm grow font-semibold">
                 New Workspace
@@ -105,4 +105,4 @@ const createNewWorkspace = async () => {
     opacity: 0;
     transform: translateY(-50px);
 }
-</style>../../store/workspaceStore
+</style>

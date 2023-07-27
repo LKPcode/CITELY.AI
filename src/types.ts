@@ -3,6 +3,7 @@ interface Workspace {
     id?: string;
     name: string;
     created_at?: string;
+    paper_num?: number;
 }
 
 interface Chat {

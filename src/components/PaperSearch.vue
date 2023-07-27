@@ -1,43 +1,12 @@
 <template>
-    <!--
-  This example requires some changes to your config:
   
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
 <div  class="relative z-40 overflow-hidden" role="dialog" aria-modal="true">
-  <!--
-    Background backdrop, show/hide based on modal state.
-
-    Entering: "ease-out duration-300"
-      From: "opacity-0"
-      To: "opacity-100"
-    Leaving: "ease-in duration-200"
-      From: "opacity-100"
-      To: "opacity-0"
-  -->
+  
   <div class="fixed  inset-0 bg-gray-500 bg-opacity-25 transition-opacity backdrop-blur-sm"></div>
 
   <div  @click.self="goToLibrary" class="fixed inset-0 z-10 overflow-y-hidden p-4 sm:p-6 md:p-20">
 
-    <!--
-      Command palette, show/hide based on modal state.
-
-      Entering: "ease-out duration-300"
-        From: "opacity-0 scale-95"
-        To: "opacity-100 scale-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100 scale-100"
-        To: "opacity-0 scale-95"
-    -->
+    
     <div :class="{'max-w-[90%]': search_bar_expanded, 'max-w-[40%]': !search_bar_expanded}"
          @keydown.enter="search_bar_expanded = true"
          class="mx-auto  transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all duration-700">
@@ -123,6 +92,7 @@ const search = async (page_num:number=0) => {
         searching.value = false
     } catch (error) {
         console.log(error)
+        papers.value = []
     } finally {
         searching.value = false
     }
