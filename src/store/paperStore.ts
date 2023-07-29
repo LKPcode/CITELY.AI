@@ -27,7 +27,11 @@ export default function usePaperStore () {
 
     initPaperList(all_filtered_papers)
     selectPaper(null)
-   
+  }
+
+  const clearPaper = () => {
+    selected_paper.value = null
+    initPaperList([])
   }
 
 
@@ -38,6 +42,7 @@ export default function usePaperStore () {
     initPaperList,
     selectPaper,
     addPaper,
-    removePapers
+    removePapers,
+    clearPaper
   }
 }

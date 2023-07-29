@@ -1,0 +1,82 @@
+<template>
+    <!-- MainBar HEADER -->
+    <div class="h-[70px] min-h-[70px] bg-white  border-b border-grayer ">
+                <div class="h-[3px] bg-blue-400"></div>
+
+                <div class="flex items-center">
+
+                    <div @click="goBack" class="bg-lightgray hover:bg-grayer rounded-xl p-2 m-2 cursor-pointer">
+                        <img src="../components/icons/Back.svg" class="w-8" alt="">
+                    </div>
+
+                    <div class="mx-4">
+                        <div class="font-bold">
+
+                            <nav class="flex" aria-label="Breadcrumb">
+                                <ol role="list" class="flex items-center">
+                                <!-- <li>
+                                    <div>
+                                    <router-link  to="/" class="text-gray-400 hover:text-gray-500">
+                                        <img src="../components/icons/Home.svg" class="h-5 w-5 flex-shrink-0" aria-hidden="true" />
+                                        Home
+                                    </router-link >
+                                    </div>
+                                </li> -->
+                                <li v-for="(page, index) in pages" :key="page.name">
+                                    <div class="flex items-center">
+                                        <router-link 
+                                        :to="{ name: page.routename }"
+                                        :class="index === pages.length - 1 ? 'font-bold text-gray-700 hover:text-gray-900' : 'font-medium text-gray-500 hover:text-gray-700'"
+                                        class=" text-sm mr-2 " > {{ page.name }} </router-link>
+                                        <img
+                                            v-if="index !== pages.length - 1"
+                                            src="../components/icons/RightArrow.svg" class="h-5 w-5 mr-2 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                    </div>
+                                </li>
+                                </ol>
+                            </nav>
+
+                        </div>
+                        <div class="mt-1 text-grayest text-sm ">
+                            {{ title }}
+                        </div>
+                    </div>
+                    
+                    
+
+                    <span class="ml-auto h-full">
+                        <slot></slot>
+                    </span>
+
+                </div>
+
+
+    </div>
+
+</template>
+
+<script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+
+const { pages, title } = defineProps({
+    pages: {
+        type: Array<{
+            name: string,
+            routename: string
+        }>,
+        required: true
+    },
+    title: {
+        type: String,
+        required: true
+    }
+})
+
+const router = useRouter()
+const goBack = () => {
+    router.push({ name: pages[pages.length - 2].routename })
+}
+
+
+</script>

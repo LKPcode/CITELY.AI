@@ -1,27 +1,8 @@
 <template>
     <div class="grow flex flex-col">
-        <!-- MainBar HEADER -->
-        <div class="h-[70px] min-h-[70px] bg-white  border-b border-grayer">
-            <div class="h-[3px] bg-green-500"></div>
+        <HeaderBar :pages="[{name: 'Home', routename:'HomeView'},{name:'Workspace', routename:'WorkspaceView'},{name:'Chat',  routename:'MainBar'},{name:'Inspector', routename:'PaperView'}]" title="The title of the PDF" >
 
-            <div class="flex">
-
-                <div @click="goBack"   
-                class="bg-lightgray rounded-xl p-2 m-2 cursor-pointer w-12 min-w-12">
-                    <img src="../components/icons/Back.svg" class="" alt="">
-                </div>
-
-                <div class="mx-4 mt-2.5">
-                    <div v-if="selected_workspace" class="  font-bold">
-                       {{ selected_workspace.name }}
-                        <span class="text-xs ml-2 underline text-grayest font-normal">6 Papers</span>
-                    </div>
-                    <div v-if="paper" class="text-grayest text-sm truncate">
-                        {{paper.title}}
-                    </div>
-                </div>
-            </div>
-        </div>
+        </HeaderBar>
 
         <!-- PDF Viewer -->
 
@@ -55,6 +36,7 @@ import { onMounted, ref, watch } from 'vue';
 import { Paper } from '../types';
 import useWorkspaceStore from '../store/workspaceStore';
 
+import HeaderBar from '../components/HeaderBar.vue';
 import View404 from './View404.vue'
 
 

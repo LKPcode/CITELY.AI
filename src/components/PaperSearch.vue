@@ -107,7 +107,7 @@ const navigatePaperList = (navigate_to_page_num:number) => {
 const router = useRouter()
 const goToLibrary = () => {
     console.log('goToLibrary')
-    router.replace({ name: 'LibraryView' })
+    router.replace({ name: 'WorkspaceView' })
 }
 
 // import { ref } from 'vue'

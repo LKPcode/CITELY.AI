@@ -17,11 +17,17 @@ export default function useSourceStore() {
         selected_source.value = source 
     }
 
+    const clearSource = () => {
+        selected_source.value = null
+        initSourceList([])
+    }
+
     return {
         source_list,
         selected_source,
         selectSource,
-        initSourceList
+        initSourceList,
+        clearSource
     }
 
 }

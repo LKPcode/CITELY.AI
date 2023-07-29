@@ -132,16 +132,8 @@ let workspace_id = route.params.workspace_id as string
 
 const paper_store = usePaperStore()
 
-
 const selectedPapers = ref<any>([])
 
-
-//get papers on Mounted
-
-onMounted(async () => {
-  let temp_papers = await paper_api.getPapersOfWorkspace(workspace_id)
-  paper_store.initPaperList(temp_papers)
-})
 
 const indeterminate = computed(() => selectedPapers.value.length > 0 && selectedPapers.value.length < paper_store.paper_list.value.length)
 

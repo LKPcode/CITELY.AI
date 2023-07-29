@@ -1,10 +1,10 @@
 <template>
     <!-- CHATS -->
-    <div class="h-full flex flex-col">
-        <div class="uppercase mt-4 text-center font-bold text-sm text-slate-600 my-2">
+    
+        <!-- <div class="uppercase mt-4 text-center font-bold text-sm text-slate-600 my-2">
             CHATS
-        </div>
-        <div class="grow overflow-auto hide-scrollbar">
+        </div> -->
+        <div class="h-full py-3">
 
             <TransitionGroup name="enter" >
                 <div v-for="chat in chat_store.chat_list.value" :key="chat.id" class="flex items-center p-2 rounded-xl cursor-pointer"
@@ -13,19 +13,16 @@
                     <div class="ml-4 text-sm font-semibold">
                         {{ chat.name }}
                     </div>
+                    <TrashIcon v-if="chat.id == selected_chat?.id" 
+                                @click.stop="deleteChat()"
+                                class="ml-auto hover:stroke-accent" />
                 </div>
             </TransitionGroup>
 
         </div>
 
-        <div @click="createNewChat"
-             class="flex items-center p-2 bg-cyan-50 hover:bg-cyan-100  rounded-xl cursor-pointer">
-            <img src="../../components/icons/NewChat.svg" class="w-7 ml-2" alt="Add Paper">
-            <div class="ml-4 text-sm grow font-bold">
-                New Chat
-            </div>
-        </div>
-    </div>
+
+    
 </template>
 
 
@@ -34,6 +31,7 @@ import { onMounted, watch } from "vue";
 import useChatStore from "../../store/chatStore"
 import chat_api from "../../api/chats_api"
 import { useRoute, useRouter } from "vue-router"
+import TrashIcon from "../icons/TrashIcon.vue";
 
 const chat_store = useChatStore()
 
@@ -42,32 +40,8 @@ let { selected_chat } = chat_store
 const route = useRoute()
 const router = useRouter()
 
-router.beforeEach(async (to, _ , next) => {
-    // console.log("Before Each working")
-    if ( to.name == "EmptyMainBar" ){
-        // console.log("Empty main bar")
-        let workspace_id = to.params.workspace_id as string
-
-        let temp_chats = await chat_api.getChatsOfWorkspace(workspace_id)
-        chat_store.initChatList(temp_chats)
-
-        if (temp_chats.length > 0) {
-            next({ name: "MainBar", params: { workspace_id:workspace_id  , chat_id: temp_chats[0].id } })
-        }
-    }
-    next()
-})
-
-
 
 let workspace_id = route.params.workspace_id as string
-
-// Refresh chats when workspace id changes
-watch(() => route.params.workspace_id, async () => {
-    workspace_id = route.params.workspace_id as string
-    console.log("Workspace id changed, refreshing chats", workspace_id)
-    await refreshChats(workspace_id)
-})
 
 // Refresh chats when chat id changes
 watch(() => route.params.chat_id, async () => {
@@ -109,19 +83,13 @@ const refreshChats = async (workspace_id:string) => {
 }
 
 
-// Create new chat
-const createNewChat = async () => {
-    console.log("Create new chat")
-    let new_chat = await chat_api.createChat({
-        name: `Chat ${chat_store.chat_list.value.length + 1}`, 
-        workspace_id: workspace_id
-    })
-    chat_store.addChat(new_chat)
-    goToChat(new_chat)
+// Delete chat
+const deleteChat = async () => {
+    chat_store.showDeleteChatModal.value = true
 }
 
-// Go to chat
 
+// Go to chat
 const goToChat = (chat:any) => {
     router.push({name: "MainBar", params: { chat_id: chat.id}})
 }

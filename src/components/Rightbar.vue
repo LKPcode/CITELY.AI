@@ -86,11 +86,12 @@ const {showSidebar} = sidebarStore();
 
 // Open PDF
 const router = useRouter();
-const route = useRoute();
+// const route = useRoute();
 const openPDF = (paper_id: string) => {
-  let current_workspace = route.params.workspace_id; 
+//   let current_workspace = route.params.workspace_id; 
+
   showSidebar.value = false;
-  router.push(`/workspace/${current_workspace}/paper/${paper_id}`);
+  router.push({ name: "PaperView", params: { paper_id: paper_id }});
 };
 
 

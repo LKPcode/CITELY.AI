@@ -23,11 +23,17 @@ export default function useWorkspaceListStore() {
         selected_workspace.value = workspace;
     }
 
+    const clearWorkspace = () => {
+        selected_workspace.value = null;
+        initWorkspaceList([]);
+    }
+
     return {
         workspace_list,
         selected_workspace,
         initWorkspaceList,
         addWorkspace,
-        selectWorkspace
+        selectWorkspace,
+        clearWorkspace
     }
 }
