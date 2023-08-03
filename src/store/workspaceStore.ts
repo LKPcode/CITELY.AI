@@ -6,6 +6,8 @@ const workspace_list = ref<Workspace[]>([])
 
 const selected_workspace = ref<Workspace | null>(null)
 
+const showDeleteWorkspaceModal = ref<boolean>(false)
+
 
 export default function useWorkspaceListStore() {
 
@@ -28,12 +30,20 @@ export default function useWorkspaceListStore() {
         initWorkspaceList([]);
     }
 
+    const removeWorkspace = (workspace_id: string) => {
+        // remove workspace from workspace_list, filter out.
+        workspace_list.value = workspace_list.value.filter(workspace => workspace.id !== workspace_id)
+    }
+
+
     return {
         workspace_list,
         selected_workspace,
         initWorkspaceList,
         addWorkspace,
         selectWorkspace,
-        clearWorkspace
+        clearWorkspace,
+        showDeleteWorkspaceModal,
+        removeWorkspace
     }
 }

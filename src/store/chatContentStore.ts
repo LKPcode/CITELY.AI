@@ -12,4 +12,4 @@ export default function useChatContentStore() {
         chat_content,
      
     }
-    }
+}

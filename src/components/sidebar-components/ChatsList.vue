@@ -6,8 +6,8 @@
         </div> -->
         <div class="h-full py-3">
 
-            <TransitionGroup name="enter" >
-                <div v-for="chat in chat_store.chat_list.value" :key="chat.id" class="flex items-center p-2 rounded-xl cursor-pointer"
+            <TransitionGroup name="list-complete" tag="div" class="flex flex-col" >
+                <div v-for="chat in chat_store.chat_list.value" :key="chat.id" class="list-complete-item flex items-center p-2 rounded-xl cursor-pointer"
                     :class="[chat.id == selected_chat?.id ? 'bg-lightgray' : 'hover:bg-zinc-100']" @click="goToChat(chat)">
                     <img src="../../components/icons/Chat.svg" class="w-7 ml-2" alt="Chat Icon">
                     <div class="ml-4 text-sm font-semibold">
@@ -100,17 +100,18 @@ const goToChat = (chat:any) => {
 
 <style scoped>
 
-.enter-enter-active,
-.enter-leave-active {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  /* top to bottom */
+.list-complete-item {
+    transition: transform 0.7s, opacity 0.7s, margin 0.7s 0.3s;
+  /* margin-right: 10px; */
 }
-
-.enter-enter-from,
-.enter-leave-to {
+.list-complete-enter, .list-complete-leave-to
+/* .list-complete-leave-active below version 2.1.8 */ {
   opacity: 0;
-  transition: opacity 0s ease, transform 0s ease;
+  transform: translateX(-300px);
+  margin-bottom: -45px;
 }
-
+.list-complete-leave-active {
+  /* position: absolute; */
+}
 
 </style>

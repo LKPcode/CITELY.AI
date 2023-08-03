@@ -1,29 +1,47 @@
 <template>
+    <DeleteWorkspacePopup class="z-40" />
     <div class="h-full flex overflow-hidden">
+
 
         <!-- <PaperSearch /> -->
         <router-view></router-view>
 
         <div class="grow flex flex-col">
 
-
             <HeaderBar
                 :pages="[{ name: 'Home', routename: 'HomeView' }, 
                         { name: 'Workspace', routename: 'WorkspaceView' }]"
                 :title="workspace ? workspace.name : ''">
 
-                <RouterLink :to="{name:'MainBar', params:{chat_id: 0}}">
-                    <button class="bg-accent rounded-full font-bold px-5 py-2 self-center mr-4">
-                        Chat
-                    </button>
-                </RouterLink>
+                <div class="flex items-center mr-4">
+                    <div v-if="workspace" class="flex flex-col items-end mr-4 gap-1 text-right">
+                        <span class="text-xs text-grayest">{{ workspace?.paper_num }} Papers</span>
+                        <span class="text-xs text-grayest"> Created {{ formatDateRelativeToCurrent(workspace?.created_at) }} </span>
+                    </div>
 
+                    <Tooltip v-if="paper_store.paper_list.value.length==0" content="Add papers to the workspace to start chating">
+                        
+                            <button class=" rounded-full font-bold px-5 py-2 self-center"
+                                :class="['bg-gray-200' ]">
+                                Chat
+                            </button>
+                        
+                    </Tooltip >
+                    <RouterLink v-else :to="{name:'MainBar'}">
+                            <button class=" rounded-full text-white font-bold px-5 py-2 self-center mr-4"
+                                :class="['bg-accent']">
+                                Chat
+                            </button>
+                    </RouterLink>
+
+                
+            </div>
             </HeaderBar>
 
 
 
             <!-- Library -->
-            <div class="px-12 mb-12 grow flex flex-col">
+            <div class="px-12 mb-12 mt-4 grow flex flex-col">
 
                 <!-- <Tabs/> -->
                 <div v-if="!loading" 
@@ -42,15 +60,15 @@
             </div>
 
             <div class="flex justify-end items-center px-4 py-2 text-sm text-grayest">
-                <button @dblclick="deleteWorkspace" class="hover:underline hover:text-red-500">Delete Workspace</button>
+                <button @click="deleteWorkspace" class="hover:underline hover:text-red-500">Delete Workspace</button>
             </div>
 
 
         </div>
 
         <div class=" h-full w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
-    //mr-[-400px] transition-all ease-in-out duration-500 sm:duration-700
-    ">
+                    //mr-[-400px] transition-all ease-in-out duration-500 sm:duration-700
+                    ">
             <div class="flex flex-col h-full  min-w-[400px]">
                 <!-- RightBar HEADER -->
                 <div class="h-[70px] bg-white  border-b border-grayer">
@@ -91,7 +109,7 @@ import PaperMetadata from '../components/PaperMetadata.vue';
 import PaperList from '../components/PaperList.vue';
 import useWorkspaceStore from '../store/workspaceStore';
 // useRouter
-import { RouterView, useRouter, useRoute } from 'vue-router'
+import { RouterView, useRoute } from 'vue-router'
 // import Tabs from '../components/Tabs.vue';
 import workspace_api from '../api/workspaces_api';
 import { onMounted } from 'vue';
@@ -101,6 +119,10 @@ import usePaperStore from '../store/paperStore';
 import paper_api from '../api/papers_api';
 import { ref } from 'vue';
 import { Workspace } from '../types';
+import DeleteWorkspacePopup from '../components/DeleteWorkspacePopup.vue';
+import formatDateRelativeToCurrent from '../helper_functions/datetime';
+import router from '../router';
+import Tooltip from '../components/Tooltip.vue';
 
 const workspace_store = useWorkspaceStore();
 const paper_store = usePaperStore();
@@ -110,6 +132,7 @@ const workspace = ref<Workspace>()
 
 const route = useRoute()
 onMounted(async () => {
+    try{
     let workspace_id = route.params.workspace_id as string
     workspace.value = await workspace_api.getWorkspace(workspace_id)
     workspace_store.selectWorkspace(workspace.value)
@@ -119,20 +142,14 @@ onMounted(async () => {
     paper_store.initPaperList(temp_papers)
     loading.value = false
 
+    }catch(err){
+        router.push({name:'NotFound'})
+    }
 })
 
 
-// Back button
-const router = useRouter()
-const goBack = () => {
-    router.back()
-}
-
-
 const deleteWorkspace = () => {
-    console.log("Delete Workspace")
-    workspace_api.deleteWorkspace(workspace_store.selected_workspace.value?.id as string)
-    router.push({ name: "EmptyMainBar", params: { workspace_id: null } })
+    workspace_store.showDeleteWorkspaceModal.value = true
 }
 
 </script>

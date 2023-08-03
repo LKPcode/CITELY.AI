@@ -3,6 +3,13 @@ import supabase from "./supabase_instance";
 let localUser;
 let temp;
 
+supabase.auth.onAuthStateChange((event, session) => {
+  if (event == 'SIGNED_OUT') {
+    console.log('SIGNED_OUT', session)
+    document.location = '/'
+}
+})
+
 // Register a new user
 const register = async (email: string, password: string) => {
     const { data, error } = await supabase.auth.signUp({
@@ -27,20 +34,14 @@ const login = async (email: string, password: string) => {
     if (error) throw error;
 
 
-    return { data, error };
+    return data;
 }
 
 //Get User 
-async function getUser(next) {
+async function getUser() {
     localUser = await supabase.auth.getSession();
-      if ( localUser.data.session == null) {
-          next('/')
-      }
-      else {
-        next();
-      }
-     localUser.data.session = temp;
-  }
+    return localUser;
+}
 
 
   const logout = async () => {
@@ -55,7 +56,7 @@ async function getUser(next) {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-          redirectTo: 'http://localhost:5173/workspace/0/chat/0'
+          redirectTo: 'http://localhost:5173/home'
         }
       })
     

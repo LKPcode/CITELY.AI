@@ -1,12 +1,12 @@
 <template>
     <!-- MainBar HEADER -->
     <div class="h-[70px] min-h-[70px] bg-white  border-b border-grayer ">
-                <div class="h-[3px] bg-blue-400"></div>
+                <div class="h-[3px] bg-accent"></div>
 
                 <div class="flex items-center">
 
                     <div @click="goBack" class="bg-lightgray hover:bg-grayer rounded-xl p-2 m-2 cursor-pointer">
-                        <img src="../components/icons/Back.svg" class="w-8" alt="">
+                        <img src="../components/icons/Back.svg" class="w-8 " alt="">
                     </div>
 
                     <div class="mx-4">
@@ -37,7 +37,7 @@
                             </nav>
 
                         </div>
-                        <div class="mt-1 text-grayest text-sm ">
+                        <div class="mt-1 text-grayest text-sm">
                             {{ title }}
                         </div>
                     </div>

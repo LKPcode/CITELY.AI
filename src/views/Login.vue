@@ -97,14 +97,10 @@ const login = async () => {
     const response = await authentication_api.login(credentials.value.email, credentials.value.password);
     console.log(response)
    
-    router.push('/workspace/0/chat/0')
-
-
+    router.push('/home')
   } 
-  
-  
   catch (error) {
-    console.log(error)
+    console.log("LOGIN ERROR",error)
   }
 }
 

@@ -11,11 +11,12 @@ import userState from '../composables/store.ts'
 import authentication_api from '../api/authentication_api.ts'
 import Home from '../views/Home.vue'
 
+import View404 from '../views/View404.vue';
 
+import PaperReaderView from '../components/PaperReaderView.vue'
 
 
 const routes = [
-  
   {
     path: '/',
     name: 'Login',
@@ -36,16 +37,23 @@ const routes = [
         name: 'SearchView',
         component: PaperSearch,
       }
-    ]
+    ],
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/workspace/:workspace_id/paper/:paper_id',
+    name: 'PaperReaderView',
+    component: PaperReaderView,
+    meta: { requiresAuth: true }
   },
   {
     path: '/home',
     name: 'HomeView',
     component: Home,
-
+    meta: { requiresAuth: true }
   },
   {
-    path: '/workspace/:workspace_id/chat/:chat_id',
+    path: '/workspace/:workspace_id/chat/:chat_id?',
     name: 'ChatView',
     component: ChatView,
     children: [
@@ -62,6 +70,12 @@ const routes = [
     ],
     meta: { requiresAuth: true }
   },
+  // 404 View
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: View404,
+  }
 ]
 
 
@@ -76,21 +90,27 @@ const router = createRouter({
 
 
 
-router.beforeEach((to, from, next) => {
-  if (to.meta.requiresAuth) {
-      if (to.path !== '/') {
-          authentication_api.getUser(next);
-      } 
-      else{
-          next();
-      }
-  } else {
-      next();
+router.beforeEach( async (to, from, next) => {
+  let user = await authentication_api.getUser();
+  // console.log(user.data.session);
+
+  if ((to.name == 'Login' || to.name=='Register') && user.data.session) {
+    next({ name: 'HomeView' })
   }
-  //  if ( authentication_api.temp !== null && to.path == '/') {
-  //      next('/workspace/0/chat/0');
+  else if (to.meta.requiresAuth && !user.data.session) {
+    next({ name: 'Login' })
+  }
+
+
+  // if (to.meta.requiresAuth) {
+  //   if (user) {
+  //     next();
+  //   } else {
+  //     next({ name: 'Login' })
+  //   }
   // }
 
+  next();
 });
 
 

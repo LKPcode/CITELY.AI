@@ -14,34 +14,18 @@
             </div>
         </div>
 
-        <Tabs class="m-auto" :tabs="tabs" />
+        <Tabs class="m-auto" :tabs="tabs" 
+                :key="selected_tab + 'tabs'"
+                @selectTab="selectTab"
+                />
 
-        <!-- RightBar Body -->
-        <div v-if="sources_store.source_list.value.length > 0" class="grow overflow-auto">
-
-            <!-- SOURCE COMPONENT -->
-            <div v-for=" source in sources_store.source_list.value" class="border-b border-grayer px-4 py-2">
-                <div class="mx-2 border-b border-grayer text-sm">
-                    <div class="flex items-center mb-1">
-                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Title: </span> {{source.title}}</span>
-                        <button @click="openPDF(source.paper_id)" class="border-2 px-3 rounded-full border-accent hover:bg-accent "> Open </button>
-                    </div>
-                    <div class="flex items-center text-xs mb-2">
-                        <span class="grow truncate mr-6 font-bold"> <span class="text-grayest ">Section: </span> {{ source.section }} </span>
-                        <span class="text-grayest font-semibold">Published: {{ source.published_at }}</span>
-                    </div>
-                </div>
-                <div class="m-2 text-sm">
-                    {{ source.passage }}
-                </div>
-            </div>
-
-
-
+        <div class="grow overflow-auto">
+            
+            <!-- RightBar Body -->
+            <SourcesList v-if="selected_tab=='Sources'" />
+            <ReferencesList v-else-if="selected_tab=='References'" />
         </div>
-        <div v-else class="border-l-grayer text-grayest text-sm h-full flex flex-col items-center justify-center">
-            No Sources
-        </div>
+       
 
         <!-- FEEDBACK FOOTER -->
         <div class="p-4 border-t border-grayer text-center font-bold text-grayest text-sm">
@@ -55,44 +39,56 @@
 
 <script setup lang="ts">
 // useRouter
-import { useRouter, useRoute } from "vue-router";
-import {sidebarStore} from "../store/sidebarStore";
-import useSourcesStore from '../store/sourcesStore';
+import { useRoute } from "vue-router";
 import Tabs from '../components/Tabs.vue';
-import { ref } from "vue"
+import { ref, onMounted, watch } from "vue"
 import type { Tab } from "../types"
+import SourcesList from "./SourcesList.vue";
+import ReferencesList from "./ReferencesList.vue";
 
-let tabs = ref<Tab[]>([{
-        name:"Sources",
-        current: true
-    },
-    {
-        name:"Notes",
-        current:false
-    },
-    {
-        name:"Highlights",
-        current:false
-    },
-    {
-        name:"Citations",
-        current:false
+let selected_tab = ref<string|null>(null)
+
+let tabs = ref<Tab[]>([])
+
+const route = useRoute();
+onMounted(async () => {
+    decideTabSystem(route.name)
+})
+
+watch(() => route.name, (newVal) => {
+    decideTabSystem(newVal)
+})
+
+const decideTabSystem = (newVal:any) => {
+    tabs.value = [
+        {name: "Sources", current: false},
+        {name: "References", current: false},
+        {name: "Highlights", current: false},
+        {name: "Notes", current: false},
+    ]
+    if (newVal == "MainBar") {
+        //  if chat view is open, dont show tabs, just show sources
+        tabs.value = []
+        selected_tab.value = "Sources"
     }
+    else if (newVal == "PaperReaderView") {
+        // if paper view is open, show all tabs except sources
+        tabs.value = tabs.value.filter(tab => tab.name != "Sources")
+    }
+    
+    if (tabs.value.length > 0){
+        // set the selected tab to the first tab
+        selected_tab.value = tabs.value[0].name
+        tabs.value.forEach(tab => tab.current = false)
+        tabs.value[0].current = true
+    }
+}
 
-])
-
-const  sources_store = useSourcesStore();
-const {showSidebar} = sidebarStore();
-
-// Open PDF
-const router = useRouter();
-// const route = useRoute();
-const openPDF = (paper_id: string) => {
-//   let current_workspace = route.params.workspace_id; 
-
-  showSidebar.value = false;
-  router.push({ name: "PaperView", params: { paper_id: paper_id }});
-};
+const selectTab = (tab: Tab) => {
+    tabs.value.forEach(tab => tab.current = false)
+    tab.current = true
+    selected_tab.value = tab.name
+}
 
 
 

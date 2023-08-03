@@ -30,26 +30,17 @@
   
   <script lang="ts" setup>
   import type {Tab} from "../types"
-  import { onMounted, ref } from "vue"
+
   
+
+  const emit = defineEmits(['selectTab'])
   
-    const props = defineProps<{
+    const {tabs} = defineProps<{
         tabs: Tab[]
     }>();
 
-  const tabs = ref<Tab[]>([])
-
-  onMounted(()=>{
-    tabs.value = props.tabs;
-  })
-
   const selectTab = (tab: Tab) => {
-    console.log("selectTab")
-
-    tabs.value.forEach((tab) => {
-      tab.current = false;
-    });
-    tab.current = true;    
+    emit('selectTab', tab)
   }
 
   </script>

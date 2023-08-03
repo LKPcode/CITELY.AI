@@ -5,6 +5,7 @@ const getPapersOfWorkspace = async (workspace_id: string): Promise<Paper[]> => {
     const { data, error } = await supabase.from('paper')
       .select('*')
       .eq('workspace_id', workspace_id)
+      .order('created_at', { ascending: false });
     
     if (error) {
       throw error;
@@ -66,11 +67,25 @@ const getPapersOfWorkspace = async (workspace_id: string): Promise<Paper[]> => {
     
   }
 
+  const getPaperReferences = async (paper_id: string): Promise<any> => {
+    const { data, error } = await supabase.from('paper')
+      .select('references')
+      .eq('id', paper_id)
+      .single();
+    
+    if (error) {
+      throw error;
+    }
+    
+    return data.references ;
+  }
+
 
   export default {
     getPapersOfWorkspace,
     createPaper,
     deletePapersOfWorkspace,
     getPaper,
-    downloadPDF
+    downloadPDF,
+    getPaperReferences
   }

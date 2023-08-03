@@ -20,6 +20,7 @@ const addPaperToWorkspace = async (paper: any, workspace_id: string) => {
         body: {paper, workspace_id}
     })
 
+
     if (error) {
        throw error
     }
