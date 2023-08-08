@@ -17,23 +17,20 @@
 </template>
 
 <script setup lang="ts">
-import { Toaster, toast } from 'vue-sonner'
+import { Toaster } from 'vue-sonner'
 
 import { onMounted } from 'vue'
 // import Notification from './components/Notification.vue'
 
-onMounted(() => {
 
-  // toast.success(
-  //     "Succesful Download", {
-  //       style: {
-  //         border: '1px solid rgb(244, 43, 147)',
-  //         'margin-top': '20px',
-  //         translate: '-20px',
-  //     },
-  //     description: 'Monday, January 3rd at 6:00pm'
-  // })
+import user_api from './api/user_api'
+import useUserStore from './store/UserStore'
 
+
+const user_store = useUserStore()
+onMounted(async () => {
+    let user = await user_api.getUserData()
+    user_store.setUser(user)
 })
 
 

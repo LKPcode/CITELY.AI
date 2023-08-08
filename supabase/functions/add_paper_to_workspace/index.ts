@@ -5,6 +5,7 @@
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
 import axiod from "https://deno.land/x/axiod/mod.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+import {Buffer} from "https://deno.land/std/io/buffer.ts";
 
 // const https = require('https')
 
@@ -16,7 +17,6 @@ const headers = {
   "Access-Control-Expose-Headers": "Content-Length, X-JSON",
   "Access-Control-Allow-Headers": "apikey, X-Client-Info, Content-Type, Authorization, Accept, Accept-Language, X-Authorization",
 }
-
 
 
 const downloadFileAsArrayBuffer = async (url) => {
@@ -37,6 +37,20 @@ const downloadFileAsArrayBuffer = async (url) => {
     throw new Error(`Error during file download: ${error.message}`);
   }
 };
+
+function isPDF(buf: Uint8Array): boolean {
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+  const pdfHeader = encoder.encode("%PDF-");
+  const pdfFooter = encoder.encode("%%EOF");
+
+  return (
+    buf instanceof Uint8Array &&
+    buf.subarray(0, pdfHeader.length).toString() === decoder.decode(pdfHeader) &&
+    buf.lastIndexOf(pdfFooter) > -1
+  );
+}
+
 
 serve(async (req: Request) => {
   try {
@@ -63,6 +77,13 @@ serve(async (req: Request) => {
 
     // Download pdf
     let pdf = await downloadFileAsArrayBuffer(pdf_url);
+
+    console.log("pdf", pdf)
+    console.log("is pdf", isPDF(pdf))
+    // Check if pdf
+    // if (!isPDF(pdf)) {
+    //   throw new Error(`File is not a PDF`);
+    // }
 
     // // Now we can get the session or user object
     // const {

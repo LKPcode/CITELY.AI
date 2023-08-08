@@ -14,6 +14,9 @@ import Home from '../views/Home.vue'
 import View404 from '../views/View404.vue';
 
 import PaperReaderView from '../components/PaperReaderView.vue'
+import Settings from '../views/Settings.vue'
+import BillingSettings from '../components/settings-components/BillingSettings.vue';
+import AccountSettings from '../components/settings-components/AccountSettings.vue';
 
 
 const routes = [
@@ -50,6 +53,24 @@ const routes = [
     path: '/home',
     name: 'HomeView',
     component: Home,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: Settings,
+    children: [
+      {
+        path: '',
+        name: 'AccountSettings',
+        component: AccountSettings,
+      },
+      {
+        path: 'billing',
+        name: 'BillingSettings',
+        component: BillingSettings,
+      }
+    ],
     meta: { requiresAuth: true }
   },
   {

@@ -1,6 +1,6 @@
 <template>
     <!-- MainBar HEADER -->
-    <div class="h-[70px] min-h-[70px] bg-white  border-b border-grayer ">
+    <div class="h-[70px] group min-h-[70px] bg-white  border-b border-grayer relative">
                 <div class="h-[3px] bg-accent"></div>
 
                 <div class="flex items-center">
@@ -50,6 +50,14 @@
 
                 </div>
 
+
+        <!-- NOTIFICATION -->
+        <!-- <div class="absolute h-0 flex justify-center items-center 
+                    group-hover:h-8
+                    w-full shadow-sm border-b bottom-0 
+                    translate-y-full overflow-hidden transition-all duration-500">
+            <div class="text-xs font-semibold text-accent text-center">Message</div>
+        </div> -->
 
     </div>
 

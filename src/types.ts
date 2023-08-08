@@ -44,11 +44,20 @@ interface Tab {
     current: boolean
 }
 
+interface User {
+    email: string;
+    user_id: string;
+    subscription_plan: string;
+    stripe_customer_id: string;
+    created_at: string;
+}
+
 
 export type {
     Workspace,
     Chat,
     Paper,
-    Tab
+    Tab,
+    User,
 }
 

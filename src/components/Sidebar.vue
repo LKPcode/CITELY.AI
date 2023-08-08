@@ -10,7 +10,7 @@
         <!-- SIDEBAR HEADER -->
         <div class="h-[70px] p-3 flex items-center bg-white  border-b border-grayer">
             <div @click="createNewChat"
-             class="grow flex items-center p-2 mr-4 text-center bg-lightgray hover:bg-cyan-200 rounded-xl cursor-pointer">
+             class="grow flex items-center p-2 mr-4 text-center bg-lightgray hover:bg-accent rounded-xl cursor-pointer">
                 <img src="../components/icons/NewChat.svg" class="w-8 ml-2" alt="Add Paper">
                 <div class="text-center grow font-bold ">
                     New Chat

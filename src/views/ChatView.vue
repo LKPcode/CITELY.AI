@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+
 import DeleteChatPopup from '../components/DeleteChatPopup.vue';
 import Rightbar from '../components/Rightbar.vue';
 

@@ -11,7 +11,7 @@ export default {
         'lightgray': '#EEEEEE',
         'grayer': '#E0E0E0',
         'grayest': '#A4A4A4',
-        'accent': 'rgb(244, 43, 147)',
+        'accent': '#FF7F50',
       },
     },
   },

@@ -9,7 +9,7 @@
     
     <div :class="{'max-w-[90%]': search_bar_expanded, 'max-w-[40%]': !search_bar_expanded}"
          @keydown.enter="search_bar_expanded = true"
-         class="mx-auto  transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all duration-700">
+         class="mx-auto border border-accent transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black ring-opacity-5 transition-all duration-700">
       <div class="relative flex">
         <!-- <img src="./icons/Search.svg" class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400" alt=""> -->
         <svg class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -25,7 +25,6 @@
       <!-- Results, show/hide based on command palette state -->
     <ul :class="{'h-[70vh]': search_bar_expanded, 'h-[0vh]': !search_bar_expanded}"
         class="transition-all delay-700 duration-700 overflow-auto px-4   text-sm text-gray-800" id="options" role="listbox">
-      
        <PaperSearchList :papers="papers" />
     </ul>
 
