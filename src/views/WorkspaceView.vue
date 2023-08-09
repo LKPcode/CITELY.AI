@@ -28,7 +28,7 @@
                         
                     </Tooltip >
                     <RouterLink v-else :to="{name:'MainBar'}">
-                            <button class=" rounded-full text-white font-bold px-5 py-2 self-center mr-4"
+                            <button class=" rounded-full text-white font-bold px-5 py-2 self-center hover:bg-accent/95 shadow-sm"
                                 :class="['bg-accent']">
                                 Chat
                             </button>

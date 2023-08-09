@@ -28,6 +28,16 @@ html, body, #app {
 
 
   /* HEADER STYLES FOR MATHPIX MARKDOWN RENDERER because tailwind dletes all styles of basic elements like h1 nad button */
+
+.math-block{
+   
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: auto;
+    color: #333;
+}
+
 /* Style for h1 */
 h1 {
   font-size: 1.6rem; /* You can adjust the size as needed */

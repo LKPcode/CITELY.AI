@@ -6,12 +6,12 @@
 
             <div v-for="res in content">
                 <!-- Loading State -->
-                <div 
-                    v-if="res.type == 'status' && res.status_type == 'understanding'" 
-                    class="flex items-center mb-2 ml-2">
-                    <img v-if="res.type == 'status'" src="../../components/icons/Understanding.svg" class="mr-2" alt="Understanding Question">
-                    <span>Understanding Question</span>
-                </div>
+                    <div 
+                        v-if="res.type == 'status' && res.status_type == 'understanding'" 
+                        class="flex items-center mb-2 ml-2">
+                        <img v-if="res.type == 'status'" src="../../components/icons/Understanding.svg" class="mr-2" alt="Understanding Question">
+                        <span>Understanding Question</span>
+                    </div>
 
                 <!-- Loading State -->
                 <div 
@@ -21,19 +21,22 @@
                     <span>Splitting the Query into Steps</span>
                 </div>
 
-                <AgentStep
-                        v-if="res.type == 'step'"
-                        :step="res.step_number" 
-                        :step_description="res.text" 
-                        :step_body="res.content"
-                        class="mt-4"
-                        />
+                <!-- <Transition name="slide-fade" > -->
+                    <AgentStep
+                            v-if="res.type == 'step'"
+                            :step="res.step_number" 
+                            :step_description="res.text" 
+                            :step_body="res.content"
+                            class="mt-4"
+                            />
+                <!-- </Transition> -->
 
                 <AgentFinalAnswer 
                         v-if="res.type == 'answer'"
-                        :answer_body="res.text + '\n# Hello\n' + text"
+                        :answer_body="res.text"
                         class="mt-4"
                 />
+          
 
             </div>
 
@@ -49,10 +52,6 @@ import AgentStep from "./AgentStep.vue";
 import AgentFinalAnswer from "./AgentFinalAnswer.vue";
 
 
-import { ref } from 'vue'
-
-const text = ref('')
-
 
 const {content} = defineProps<({
     content: any
@@ -60,3 +59,26 @@ const {content} = defineProps<({
 
 
 </script>
+<!-- 
+<style scoped>
+/*
+  Enter and leave animations can use different
+  durations and timing functions.
+*/
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+
+
+</style> -->

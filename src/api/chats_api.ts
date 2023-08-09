@@ -40,10 +40,23 @@ const deleteChat = async (chat_id: string) => {
   return data as Chat;
 }
 
+const getConversationOfChat = async (chat_id: string) => {
+  const { data, error } = await supabase.from('chat')
+    .select('conversation')
+    .eq('id', chat_id).single();
+  
+  if (error) {
+    throw error;
+  }
+  
+  return data;
+}
+
 
 
 export default {
     getChatsOfWorkspace,
     createChat,
-    deleteChat
+    deleteChat,
+    getConversationOfChat
 }

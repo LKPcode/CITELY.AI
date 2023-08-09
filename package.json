@@ -11,6 +11,8 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.26.0",
     "@tailwindcss/forms": "^0.5.4",
+    "@vueuse/components": "^10.3.0",
+    "@vueuse/core": "^10.3.0",
     "axios": "^1.4.0",
     "mathpix-markdown-it": "^1.2.6",
     "split.js": "^1.6.5",

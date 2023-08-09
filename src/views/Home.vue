@@ -13,7 +13,7 @@
                     <div class=" text-2xl font-bold underline decoration-accent ">
                         CITELY.AI
                     </div >
-                    <span class="text-accent text-sm mb-5 ml-1 self-end">Pro</span>
+                    <!-- <span class="text-accent text-sm mb-5 ml-1 self-end">Pro</span> -->
                     <!-- <span class="text-grayest -mb-2 text-sm ml-4">Home</span> -->
                     <span class="ml-auto h-full flex items-center">
                         <button
@@ -70,6 +70,8 @@
 
  <FAQ id="FAQ"/>
 
+ <Footer class="mt-24" />
+
 </template>
 
 
@@ -80,6 +82,7 @@ import PricingSection from '../components/PricingSection.vue'
 import user_api from '../api/user_api';
 import useUserStore from '../store/UserStore';
 import { onMounted } from 'vue';
+import Footer from '../components/Footer.vue';
 
 
 

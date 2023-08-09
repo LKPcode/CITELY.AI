@@ -30,7 +30,11 @@ serve(async (req: Request) => {
     let offset = papers_per_page*page_num
 
     try{
-     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,abstract,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`)
+    //  axiod.defaults.headers.common['x-api-key'] = 'pSiTPLX8Sp4TxEcNyRwta44ySUY7Ymy8rT543fC5'
+     let {data, error} =  await axiod.get(`https://api.semanticscholar.org/graph/v1/paper/search?query=${search_term}&offset=${offset}&limit=20&fields=title,url,abstract,authors,publicationVenue,publicationTypes,publicationDate,fieldsOfStudy,openAccessPdf,isOpenAccess&isOpenAccess=true&openAccessPdf`,
+      { headers: {
+        "x-api-key": "pSiTPLX8Sp4TxEcNyRwta44ySUY7Ymy8rT543fC5"
+      } })
 
       if (error) {
         throw error
@@ -45,6 +49,7 @@ serve(async (req: Request) => {
      )
 
     } catch (error) {
+      console.log(error)
       return new Response(
         JSON.stringify({ error }),
         { headers: headers,
@@ -58,7 +63,7 @@ serve(async (req: Request) => {
   }
 
   return new Response(
-    JSON.stringify({ message: "You need to use POST request you dummy" }),
+    JSON.stringify({ message: "You need to use POST request type" }),
     { headers: headers }
   )
 })

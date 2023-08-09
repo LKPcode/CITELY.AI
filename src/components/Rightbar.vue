@@ -28,7 +28,7 @@
        
 
         <!-- FEEDBACK FOOTER -->
-        <div class="p-4 border-t border-grayer text-center font-bold text-grayest text-sm">
+        <div class="p-4 border-t border-grayer text-center font-bold text-gray-300 hover:text-gray-400 cursor-pointer text-sm">
             Provide Feedback for Beta
         </div>
 

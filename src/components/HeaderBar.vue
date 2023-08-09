@@ -5,7 +5,7 @@
 
                 <div class="flex items-center">
 
-                    <div @click="goBack" class="bg-lightgray hover:bg-grayer rounded-xl p-2 m-2 cursor-pointer">
+                    <div @click="goBack" class="bg-gray-100 hover:bg-lightgray rounded-xl p-2 m-2 cursor-pointer">
                         <img src="../components/icons/Back.svg" class="w-8 " alt="">
                     </div>
 

@@ -7,8 +7,9 @@
                             :title="chat_store.selected_chat.value ? chat_store.selected_chat.value.name :'Select a chat to get started' ">
 
             <div v-if="workspace" class="flex flex-col items-end mr-4 gap-1 text-right">
-                <span class="text-xs text-grayest underline" >{{ workspace?.paper_num  }} Papers</span>
+                <span class="text-xs text-grayest" >{{ workspace?.paper_num  }} Papers</span>
                 <span v-if="chat_store.selected_chat.value" class="text-xs text-grayest" > Created {{ formatDateRelativeToCurrent(chat_store.selected_chat.value?.created_at) }} </span>
+                <span v-else class="text-xs text-grayest"> - </span>
             </div>
 
 
@@ -20,7 +21,7 @@
                 <Sidebar />
             </div>
             <Chat v-if="chat_store.chat_list.value.length > 0"/>
-            <EmptyMainBar v-else />
+            <!-- <EmptyMainBar v-else /> -->
 
         </div>
 
@@ -38,17 +39,21 @@ import { Workspace } from '../../types';
 import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import formatDateRelativeToCurrent from "../../helper_functions/datetime"
+import useWorkspaceStore from '../../store/workspaceStore';
 
 const chat_store = useChatStore();
 
+const {selected_workspace} = useWorkspaceStore();
 
 const workspace = ref<Workspace | null>(null);
+
 
 const route = useRoute();
 onMounted(async () => {
     const workspace_id = route.params.workspace_id;
     if (workspace_id) {
         workspace.value = await workspaces_api.getWorkspace(workspace_id as string);
+        selected_workspace.value = workspace.value;
     }
 })
 

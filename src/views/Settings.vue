@@ -2,24 +2,34 @@
 
     <HeaderBar
         v-if="route.name == 'AccountSettings'"
-        class="fixed w-full top-0 z-50"
+        class="sticky w-full top-0 z-50"
         :pages="[{ name: 'Home', routename: 'HomeView' }, 
                         { name: 'Settings', routename: 'AccountSettings' }]"
-        title="Profile Settings" />
+        title="Profile Settings" >
+
+        <div class=" text-2xl font-bold underline decoration-accent mr-4 ">
+                        CITELY.AI
+        </div >
+    </HeaderBar>
 
     <HeaderBar
         v-else-if="route.name == 'BillingSettings'"
-        class="fixed w-full top-0 z-50"
+        class="sticky w-full top-0 z-50"
         :pages="[{ name: 'Home', routename: 'HomeView' }, 
                         { name: 'Settings', routename: 'BillingSettings' }]"
-        title="Billing Settings" />
+        title="Billing Settings" >
+
+        <div class=" text-2xl font-bold underline decoration-accent mr-4 ">
+                        CITELY.AI
+        </div >
+        </HeaderBar>
     
 
 
 
  
 
-<div class="mx-auto max-w-7xl pt-16 lg:flex lg:gap-x-16 lg:px-8">
+<div class="mx-auto max-w-7xl  lg:flex lg:gap-x-16 lg:px-8">
   <aside class="flex  overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
     <nav class="flex-none px-4 sm:px-6 lg:px-0">
       <ul role="list" class="flex gap-x-3 gap-y-1 whitespace-nowrap lg:flex-col">

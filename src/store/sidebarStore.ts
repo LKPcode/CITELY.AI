@@ -1,7 +1,7 @@
 
 import { ref } from 'vue'
 
-const showSidebar = ref(false)
+const showSidebar = ref(true)
 
 export const sidebarStore = (() => {
 

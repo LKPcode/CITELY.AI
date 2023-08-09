@@ -10,21 +10,21 @@
         <!-- SIDEBAR HEADER -->
         <div class="h-[70px] p-3 flex items-center bg-white  border-b border-grayer">
             <div @click="createNewChat"
-             class="grow flex items-center p-2 mr-4 text-center bg-lightgray hover:bg-accent rounded-xl cursor-pointer">
+             class="grow flex items-center p-2 mr-4 text-center bg-gray-50 hover:bg-gray-100 border border-gray-100 hover:border-accent  rounded-xl cursor-pointer">
                 <img src="../components/icons/NewChat.svg" class="w-8 ml-2" alt="Add Paper">
                 <div class="text-center grow font-bold ">
                     New Chat
                 </div>
             </div>
 
-            <div @click="showSidebar=!showSidebar" class="bg-lightgray rounded-xl p-2 cursor-pointer ">
+            <div @click="showSidebar=!showSidebar" class="bg-gray-50 border border-gray-100 hover:border-accent rounded-xl p-2 cursor-pointer ">
                 <img src="../components/icons/Sidebar.svg" class="w-8" alt="">
             </div>
 
             <div
              v-if="!showSidebar"
              @click="showSidebar=!showSidebar" 
-             class="bg-lightgray opacity-1 rounded-xl p-2 cursor-pointer absolute z-40 left-2 border border-gray-600">
+             class="bg-gray-100 opacity-1 rounded-xl p-2 cursor-pointer absolute z-40 left-2 border border-gray-600 hover:border-accent">
                 <img src="../components/icons/Sidebar.svg" class="w-8" alt="">
             </div>
 

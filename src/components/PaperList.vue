@@ -111,8 +111,8 @@
                   </td>
 
                   <td class="whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3">
-                    <a @click.stop="viewPDF(paper.id as string)" class="text-accent hover:text-indigo-900">
-                      Open<span class="sr-only">, {{ paper.title }}</span>
+                    <a @click.stop="viewPDF(paper.id as string)" class="text-accent hover:text-accent/80">
+                      View PDF<span class="sr-only">, {{ paper.title }}</span>
                     </a>
                   </td>
                 </tr>
