@@ -4,10 +4,17 @@
       <!-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" /> -->
       <h1 class="font-[100] text-center text-accent text-4xl tracking-widest ">CITELY.AI</h1>
       <h2 class="mt-6 mb-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Log in to your account</h2>
+      <p class=" text-center text-sm text-gray-500">
+        Not a member?
+        {{ ' ' }}
+        <RouterLink to="/register" class="font-semibold leading-6 text-accent hover:text-indigo-500">
+          Start a 14 day free trial
+        </RouterLink>
+      </p>
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-      <div class="bg-white px-6 py-12 border-2 border-y-accent shadow sm:rounded-lg sm:px-12">
+      <div class="bg-white px-6 py-12 border shadow sm:rounded-lg sm:px-12">
         <form @submit.prevent="login" class="space-y-6" action="#" method="POST">
           <div>
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>

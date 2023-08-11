@@ -5,34 +5,30 @@
     <component :is="Component" />
   </transition>
 </router-view>
-
+<!-- 
 <Toaster 
-
     position="top-right" :duration="1500" 
     closeButton  :toastOptions="{
     className: 'notification',
     descriptionClassName: 'my-toast-description'
-  }" />
+  }" /> -->
+
+ <Notification />
 
 </template>
 
 <script setup lang="ts">
-import { Toaster } from 'vue-sonner'
-
-import { onMounted } from 'vue'
-// import Notification from './components/Notification.vue'
+// import { Toaster } from 'vue-sonner'
 
 
-import user_api from './api/user_api'
-import useUserStore from './store/UserStore'
 
+// import { onMounted } from 'vue'
+import { onMounted } from 'vue';
+import Notification from './components/Notification.vue'
 
-const user_store = useUserStore()
-onMounted(async () => {
-    let user = await user_api.getUserData()
-    user_store.setUser(user)
+onMounted(() => {
+ 
 })
-
 
 </script>
 

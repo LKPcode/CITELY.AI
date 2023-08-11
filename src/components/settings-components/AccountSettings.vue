@@ -45,22 +45,23 @@
         <p class="mt-1 text-sm leading-6 text-gray-500">This information will be displayed publicly so be careful what you share.</p>
 
         <dl class="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
-          <div class="pt-6 sm:flex">
-            <dt class="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Log Out</dt>
-            <dd class="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-              <div class="text-gray-900">Log out from your account</div>
-              <button @click="logout" type="button" class="font-semibold text-indigo-600 hover:text-indigo-500">Log Out</button>
-            </dd>
-          </div>
-
-          <div class="pt-6 sm:flex">
+          
+          <!-- <div class="pt-6 sm:flex">
             <dt class="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Change Password</dt>
             <dd class="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
               <div class="text-gray-900 grow mr-12">
                 <input id="new-password" name="new_password" type="password" autocomplete="new-password" placeholder="New Password" class="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black shadow-sm ring-1 ring-inset ring-black/10 focus:ring-2 focus:ring-inset focus:ring-accent text-sm ">
-
+                
               </div>
               <button type="button" class="font-semibold text-indigo-600 hover:text-indigo-500">Change Password</button>
+            </dd>
+          </div> -->
+          
+          <div class="pt-6 sm:flex">
+            <dt class="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Log Out</dt>
+            <dd class="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
+              <div class="text-gray-900">Log out from your account</div>
+              <button @click="logout" type="button" class="font-semibold text-red-600 hover:text-red-500">Log Out</button>
             </dd>
           </div>
 

@@ -52,18 +52,21 @@
 <script setup lang="ts">
 import useChatStore from '../store/chatStore';
 import chats_api from '../api/chats_api';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
-const {showDeleteChatModal, removeChat} = useChatStore();
+const {showDeleteChatModal, removeChat, chat_list} = useChatStore();
 
 
 const route = useRoute();
+const router = useRouter();
 const deleteChat = async () => {
     const chat_id = route.params.chat_id;
     await chats_api.deleteChat(chat_id as string);
     removeChat(chat_id as string);
     showDeleteChatModal.value = false;
     console.log('Chat Deleted with id:', chat_id);
+    if(chat_list.value.length > 0) router.push({name: 'MainBar', params: {chat_id: chat_list.value[0].id}});
+    else router.push({name: 'MainBar', params: {chat_id: ''}});
 }
 
 

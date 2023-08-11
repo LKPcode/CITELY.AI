@@ -114,6 +114,7 @@ serve(async (request) => {
     status: 200,
     headers: { "Content-Type": "application/json" },
   });
+
 }catch(err){
   console.log("LKP",err);
   return new Response(err.message, { status: 400 });

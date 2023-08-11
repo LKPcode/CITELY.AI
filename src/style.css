@@ -30,13 +30,118 @@ html, body, #app {
   /* HEADER STYLES FOR MATHPIX MARKDOWN RENDERER because tailwind dletes all styles of basic elements like h1 nad button */
 
 .math-block{
-   
-    margin: 0.5rem 0;
-    padding: 0.5rem;
+    padding: 20px 20px;
     border-radius: 0.5rem;
-    overflow: auto;
+    /* https://stackoverflow.com/questions/32616525/allow-a-drop-down-element-to-overflow-a-container-that-has-hidden-or-scrolled-ov */
+    /* overflow: auto; */  
     color: #333;
+    position: relative;
+    display: block;
 }
+
+
+.math-block-menu{
+    @apply absolute top-1/2 right-0 transform translate-y-[-50%] z-10 ;
+}
+
+.math-block-menu-inside{
+    @apply hidden ;
+}
+
+
+.math-block:hover .math-block-menu-inside{
+    @apply block ;
+}
+
+
+.renderer code {
+  display: inline-block;
+  padding: 2px 5px;
+  margin: 5px 0px;
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  border-radius: 4px;
+}
+
+
+.renderer code.hljs {
+  @apply p-2 my-4 w-full overflow-auto;
+}
+
+.renderer a {
+   @apply text-accent hover:underline ;
+}
+
+
+/* 
+.renderer pre {
+  display: block;
+  padding: 20px;
+  margin: 20px 0px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  border-radius: 4px;
+  overflow-x: auto;
+} */
+
+
+.renderer ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.renderer ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.renderer li {
+  margin: 5px 0;
+}
+
+.renderer table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.renderer table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.renderer table th {
+  background-color: #f2f2f2;
+}
+
+.renderer table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.renderer table td:first-child {
+  border-left: none;
+}
+
+.renderer table td:last-child {
+  border-right: none;
+}
+
+.renderer img {
+  @apply rounded-md max-w-full max-h-[1000px] cursor-pointer hover:brightness-105;
+}
+
+.renderer svg {
+  @apply inline;
+}
+
+
 
 /* Style for h1 */
 h1 {

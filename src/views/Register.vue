@@ -1,13 +1,23 @@
 <template>
+  <div class="flex">
   <div class="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 ">
     <div class="sm:mx-auto sm:w-full sm:max-w-md">
       <!-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" /> -->
       <h1 class="font-[100] text-center text-accent text-4xl tracking-widest ">CITELY.AI</h1>
       <h2 class="mt-6 mb-0 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create an Account</h2>
+      <p class=" text-center text-sm text-gray-500">
+        Already a member?
+        {{ ' ' }}
+        <RouterLink to="/" class="font-semibold leading-6 text-accent hover:text-indigo-500">
+          Log In
+        </RouterLink>
+      </p>
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
-      <div class="bg-white px-6 py-12 border-2 border-y-accent shadow sm:rounded-lg sm:px-12">
+      <!-- <div class="bg-white px-6 py-12 border-2 border-y-accent shadow sm:rounded-lg sm:px-12"> -->
+
+      <div class="bg-white px-6 py-12">
         <form @submit.prevent="register" class="space-y-6" action="#" method="POST">
           <div>
             <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
@@ -42,7 +52,7 @@
           </div>
 
           <div>
-            <button type="submit" class="flex w-full justify-center rounded-md bg-accent px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:hover:bg-accent/95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Log In</button>
+            <button type="submit" class="flex w-full justify-center rounded-md bg-accent px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:hover:bg-accent/95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ">Sign Up</button>
           </div>
         </form>
 
@@ -75,7 +85,7 @@
       </div>
 
       <p class="mt-10 text-center text-sm text-gray-500">
-        Not a member?
+        Already a member?
         {{ ' ' }}
         <RouterLink to="/" class="font-semibold leading-6 text-accent hover:text-indigo-500">
           Log In
@@ -83,11 +93,19 @@
       </p>
     </div>
   </div>
+
+
+  <div class="w-1/2 h-screen hidden  lg:block" >
+    <img class="h-screen w-full object-cover" src="../assets/sun.webp" alt="">
+  </div>
+
+
+</div>
 </template>
 
 <script lang="ts" setup>
 import authentication_api from '../api/authentication_api.ts'
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 // import router
 import { useRouter } from 'vue-router'
 
@@ -98,28 +116,6 @@ const credentials = ref({
   password: ''
 })
 
-// const passwordError = computed(() => {
-//   if (credentials.value.password.length < 3) {
-//     return null
-//   }
-
-//   if (!/[0-9]/.test(credentials.value.password)) {
-//     return 'Password must contain at least one number'
-//   }
-//   if (!/[A-Z]/.test(credentials.value.password)) {
-//     return 'Password must contain at least one capital letter'
-//   }
-//   if (!/[^A-Za-z0-9]/.test(credentials.value.password)) {
-//     return 'Password must contain at least one special character'
-//   }
-//   if (credentials.value.password.length < 8) {
-//     return 'Password must be at least 8 characters long'
-//   }
-//   else {
-//     return null
-//   }
-// })
-
 
 
 // Register Function
@@ -127,10 +123,10 @@ const router = useRouter()
 const register = async () => {
   try {
     error_message.value = null
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,80}$/;
-    if (!passwordRegex.test(credentials.value.password)) {
-      throw new Error('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character, and be at least 8 characters long.');
-    }
+    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,80}$/;
+    // if (!passwordRegex.test(credentials.value.password)) {
+    //   throw new Error('Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character, and be at least 8 characters long.');
+    // }
     const response = await authentication_api.register(credentials.value.email, credentials.value.password);
     console.log(response)
     router.push('/home')

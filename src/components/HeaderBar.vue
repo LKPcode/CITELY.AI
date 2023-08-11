@@ -37,9 +37,13 @@
                             </nav>
 
                         </div>
-                        <div class="mt-1 text-grayest text-sm">
+                        <div v-if="title!=''" class="mt-1 text-grayest text-sm">
                             {{ title }}
                         </div>
+                        <div v-else class="mt-1 text-white text-sm">
+                            -
+                        </div>
+
                     </div>
                     
                     

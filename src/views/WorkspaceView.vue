@@ -59,7 +59,12 @@
 
             </div>
 
-            <div class="flex justify-end items-center px-4 py-2 text-sm text-grayest">
+            <div class="flex justify-between items-center px-4 py-2 text-sm text-grayest">
+                <RouterLink :to="{name: 'AccountSettings'}"
+                    class="hover:underline hover:text-gray-700  "
+                >
+                    Account Settings
+                </RouterLink>
                 <button @click="deleteWorkspace" class="hover:underline hover:text-red-500">Delete Workspace</button>
             </div>
 

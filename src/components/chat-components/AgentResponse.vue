@@ -34,7 +34,7 @@
                 <AgentFinalAnswer 
                         v-if="res.type == 'answer'"
                         :answer_body="res.text"
-                        class="mt-4"
+                        class=""
                 />
           
 

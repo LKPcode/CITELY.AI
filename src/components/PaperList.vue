@@ -7,7 +7,7 @@
       </div>
 
         <RouterLink :to="{name: 'SearchView'}" type="button"
-            class=" pl-3 py-1.5 flex items-center rounded-md border-2 border-accent cursor-pointer text-center text-sm leading-6 text-grayest shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
+            class=" pl-3 py-1.5 flex items-center rounded-md border border-accent cursor-pointer text-center text-sm leading-6 text-grayest shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent">
           <span>Add Papers to Workspace</span> 
        
           <svg class="mx-2  h-5 w-5 text-accent" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

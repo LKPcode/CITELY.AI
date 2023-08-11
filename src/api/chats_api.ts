@@ -52,11 +52,25 @@ const getConversationOfChat = async (chat_id: string) => {
   return data;
 }
 
+const updateConversationOfChat = async (chat_id: string, conversation: string) => {
+  const { data, error } = await supabase.from('chat')
+    .update({ conversation })
+    .eq('id', chat_id)
+    .select('conversation');
+  
+  if (error) {
+    throw error;
+  }
+  
+  return data;
+}
+
 
 
 export default {
     getChatsOfWorkspace,
     createChat,
     deleteChat,
-    getConversationOfChat
+    getConversationOfChat,
+    updateConversationOfChat
 }

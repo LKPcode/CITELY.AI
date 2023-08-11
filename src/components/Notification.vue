@@ -1,8 +1,20 @@
 <template>
+ <notifications animation-type="css" >
+  <template #body="props">
+    <!-- Global notification live region, render this permanently at the end of the document -->
+<div  aria-live="assertive" class="my-notification pointer-events-none fixed inset-0 flex items-end px-4 py-6 sm:items-start sm:p-6">
+  <div class="flex w-full flex-col items-center space-y-4 sm:items-end">
+    <!--
+      Notification panel, dynamically insert this into the live region when it needs to be displayed
 
-
-
-    <div class="pointer-events-auto mt-4 mr-4 min-w-[350px] max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+      Entering: "transform ease-out duration-300 transition"
+        From: "translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+        To: "translate-y-0 opacity-100 sm:translate-x-0"
+      Leaving: "transition ease-in duration-100"
+        From: "opacity-100"
+        To: "opacity-0"
+    -->
+    <div class="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
       <div class="p-4">
         <div class="flex items-start">
           <div class="flex-shrink-0">
@@ -11,11 +23,11 @@
             </svg>
           </div>
           <div class="ml-3 w-0 flex-1 pt-0.5">
-            <p class="text-sm font-medium text-gray-900">Successfully saved!</p>
-            <p class="mt-1 text-sm text-gray-500">Anyone with a link can now view this file.</p>
+            <p class="text-sm font-medium text-gray-900">{{ props.item.title }}</p>
+            <p class="mt-1 text-sm text-gray-500"  v-html="props.item.text"></p>
           </div>
           <div class="ml-4 flex flex-shrink-0">
-            <button type="button" class="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <button @click="props.close" type="button" class="inline-flex rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
               <span class="sr-only">Close</span>
               <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
@@ -25,10 +37,37 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
 
+  </template>
+</notifications>
 
 </template>
 
 <script setup lang="ts">
+
+
+import { useNotification } from "@kyvg/vue3-notification";
+import { computed, onMounted } from 'vue';
+
+const { notify }  = useNotification()
+
+// onMounted(()=>{
+//     setInterval(() => {
+//         notify({
+//             title: "Authorization",
+//             text: "You have been logged in!",
+//           });
+//     }, 5000);
+
+  
+//   // notify({
+//   //   title: "Authorization",
+//   //   text: "You have been logged in!",
+//   // });
+// });
+
+
 
 </script>

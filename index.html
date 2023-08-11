@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <title>CITELY.AI</title>
     <script src="https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.0.40/es5/bundle.js"></script>
   </head>
   <body>
@@ -12,6 +12,20 @@
 
 
     <script type="module" src="/src/main.ts"></script>
+
+    <script>
+         let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.0.40/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+    }
+  
+    </script>
 
   </body>
 </html>

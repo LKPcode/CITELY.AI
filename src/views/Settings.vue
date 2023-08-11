@@ -79,7 +79,20 @@
 <script lang="ts" setup>
 import HeaderBar from '../components/HeaderBar.vue';
 import { useRoute } from 'vue-router';
-
+import { onMounted } from 'vue';
 const route = useRoute();
+
+
+
+import user_api from '../api/user_api'
+import useUserStore from '../store/UserStore'
+
+
+const user_store = useUserStore()
+onMounted(async () => {
+    let user = await user_api.getUserData()
+    user_store.setUser(user)
+})
+
 
 </script>
