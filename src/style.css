@@ -27,6 +27,28 @@ html, body, #app {
   }
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+  padding: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-full;  
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-300;  
+}
+
   /* HEADER STYLES FOR MATHPIX MARKDOWN RENDERER because tailwind dletes all styles of basic elements like h1 nad button */
 
 .math-block{
@@ -53,7 +75,6 @@ html, body, #app {
     @apply block ;
 }
 
-
 .renderer code {
   display: inline-block;
   padding: 2px 5px;
@@ -66,27 +87,37 @@ html, body, #app {
 }
 
 
+.renderer pre {
+  display: block;
+  /* overflow-x: auto; */
+}
+
 .renderer code.hljs {
-  @apply p-2 my-4 w-full overflow-auto;
+  @apply p-2 block my-4 overflow-auto ;
 }
 
 .renderer a {
    @apply text-accent hover:underline ;
 }
 
+.renderer div{
+  @apply my-2;
+}
 
-/* 
-.renderer pre {
-  display: block;
-  padding: 20px;
-  margin: 20px 0px;
-  background-color: #f1f1f1;
-  color: #333;
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  font-size: 0.9em;
-  border-radius: 4px;
+
+.renderer .smiles {
   overflow-x: auto;
-} */
+  /* display: flex;
+  justify-content: center ; */
+}
+/* 
+
+.renderer .smiles > svg {
+  width: auto !important;
+  height: auto !important;
+}
+
+ */
 
 
 .renderer ul {

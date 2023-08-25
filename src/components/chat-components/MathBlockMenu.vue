@@ -1,7 +1,7 @@
 <template>
-    <Menu as="div" class="relative  text-left math-block-menu-inside">
+    <Menu as="div" class="relative group/btn text-left math-block-menu-inside">
         <div>
-            <MenuButton class="text-sm font-semibold text-gray-300 hover:text-accent">
+            <MenuButton class="text-sm group-hover/btn:text-accent font-semibold text-gray-300 hover:text-accent">
                 Copy
             </MenuButton>
         </div>
@@ -15,7 +15,7 @@
                     <MenuItem v-slot="{ active }">
                     <button @click="copyToClipboard('latex')"
                         class="w-full px-2 flex justify-between group items-center cursor-pointer"
-                        :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
+                        :class="[active ? 'bg-gray-50 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
                         <span>LaTex</span>
                         <svg class="stroke-gray-600 group-hover:stroke-accent" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +30,7 @@
                     <MenuItem v-slot="{ active }">
                         <button @click="copyToClipboard('asciimath')"
                         class="w-full px-2 flex justify-between group items-center cursor-pointer"
-                        :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
+                        :class="[active ? 'bg-gray-50 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
                         <span>AsciiMath</span>
                         <svg class="stroke-gray-600 group-hover:stroke-accent" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@
                     <MenuItem v-slot="{ active }">
                         <button @click="copyToClipboard('mathml')"
                         class="w-full px-2 flex justify-between group items-center cursor-pointer"
-                        :class="[active ? 'bg-gray-100 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
+                        :class="[active ? 'bg-gray-50 text-gray-900' : 'text-gray-700', 'block px-4 py-2 text-sm']">
                         <span>MathML</span>
                         <svg class="stroke-gray-600 group-hover:stroke-accent" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 //   import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 
-const props = defineProps<({
+const props:any = defineProps<({
     latex: String,
     mathml: String,
     asciimath: String,

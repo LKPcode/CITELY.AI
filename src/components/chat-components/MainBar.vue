@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full grow flex flex-col ">
+    <div class="h-full w-[calc(100vw-400px)] grow flex flex-col ">
 
         <HeaderBar :pages="[{name: 'Home', routename:'HomeView'},
                             {name:'Workspace', routename:'WorkspaceView'},
@@ -16,11 +16,14 @@
         </HeaderBar>
 
         <!-- MainBar Body -->
-        <div class="flex grow overflow-auto">
-            <div>
+        <div class="flex grow overflow-hidden">
+            <div class="flex-shrink-0">
                 <Sidebar />
             </div>
-            <Chat v-if="chat_store.chat_list.value.length > 0"/>
+            <div class="h-full flex-1 overflow-hidden relative">
+
+                <Chat v-if="chat_store.chat_list.value.length > 0"/>
+            </div>
             <!-- <EmptyMainBar v-else /> -->
 
         </div>

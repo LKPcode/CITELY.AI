@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full flex overflow-hidden	">
+    <div class="h-full w-screen flex overflow-auto	">
 
 
         <router-view v-slot="{ Component }">

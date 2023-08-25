@@ -1,6 +1,6 @@
 <template>
     <div class="renderer" ref="renderer">
-        <div  v-html="rendered_content"></div>
+        <div v-html="rendered_content"></div>
     </div>
 </template>
 
@@ -9,22 +9,17 @@
 import { computed, nextTick, onMounted, ref, onUnmounted, getCurrentInstance } from 'vue'
 import renderComponent from '../../helper_functions/renderComponent.ts'
 import debounce from '../../helper_functions/debounce.ts'
-// import { MathpixMarkdownModel, MathpixLoader } from "mathpix-markdown-it";
-// import { loadSre } from "mathpix-markdown-it/lib/sre/sre-browser";
+
 
 const props = defineProps<({
     markdown: String
 })>();
 
-// let script = document.createElement('script');
-//     script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.0.40/es5/bundle.js";
-//     document.head.append(script);
-
 const renderer = ref<HTMLElement>();
 let destroyComp:any = null
 
 const { appContext } :any = getCurrentInstance()
-onUnmounted(() => destroyComp?.())
+onUnmounted(() => destroyComp?.()) // destroy component on unmount
 
 
 // https://stackoverflow.com/questions/69488256/vue-3-append-component-to-the-dom-best-practice
@@ -34,7 +29,6 @@ onMounted( async () => {
     // Get all .math-block elements under renderer
 
     insertMathBlockMenu();
-
 })
 
 const insertMathBlockMenu = () => {
@@ -56,7 +50,7 @@ const insertMathBlockMenu = () => {
         mathBlock.appendChild(math);
         math.classList.add('math-block-menu');
 
-        destroyComp?.()
+        destroyComp?.() // destroy previous component
         destroyComp = renderComponent({
             el: math,
             component: (await import("./MathBlockMenu.vue")).default,
@@ -71,9 +65,8 @@ const insertMathBlockMenu = () => {
     });
 }
 
-let debounce_ = debounce;
-const rendered_content = computed(() => {
-        const options = {
+// Options for mathpix markdown to html conversion MMD
+const options = {
             htmlTags: true,
             codeHighlight: {
                 auto:true,
@@ -90,13 +83,18 @@ const rendered_content = computed(() => {
             htmlWrapper	:{
                 includeStyles: true,
                 includeFonts: true
-            }
+            },
+            parserErrors: 'show_input' // does not work
         }
 
+const debouncedInsertMathBlockMenu = debounce(insertMathBlockMenu, 1000);
+
+const rendered_content = computed(() => {
+        // debounce_(insertMathBlockMenu, 1000);
         let html;
         try{
             html = window.markdownToHTML( props.markdown as string, options);
-            // debounce_(insertMathBlockMenu, 1000);
+            debouncedInsertMathBlockMenu();
             // insertMathBlockMenu();
         }
         catch(e){

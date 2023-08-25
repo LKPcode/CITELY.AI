@@ -24,10 +24,12 @@
 
     </div>
 
-    <div class="mt-4 flow-root ">
-      <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+    <div class="mt-4 flow-root">
+      <div class="-mx-4 -my-2 overflow-x-auto  sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
-          <div class="relative overflow-auto h-[600px]">
+          <div class="relative overflow-auto"
+                style="height: calc(100vh - 300px);"
+                >
 
             <table class="min-w-full table-fixed divide-y divide-gray-300">
 
@@ -126,11 +128,36 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onUnmounted } from 'vue'
 import paper_api from '../api/papers_api';
 import usePaperStore from '../store/paperStore';
 import { useRoute, useRouter } from "vue-router"
 import useSourceStore from '../store/sourcesStore';
+import supabase from '../api/supabase_instance';
+
+
+let channel = supabase
+                .channel('realtime:public:paper')
+                .on(
+                'postgres_changes',
+                {
+                    event: '*',
+                    schema: 'public',
+                    table: 'paper',
+                },
+                (payload:any) => {
+                    console.log('Change received!', payload)
+                    paper_store.updatePaper(payload.new)
+                }
+                )
+                .subscribe()
+
+
+
+onUnmounted(() => {
+  channel.unsubscribe()
+})
+
 
 
 const router = useRouter()

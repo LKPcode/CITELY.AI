@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full hidden md:block w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
+    <div class="h-full hidden lg:block w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
     //mr-[-400px] transition-all ease-in-out duration-500 sm:duration-700
     ">
         <div class="flex flex-col h-full  min-w-[400px]">

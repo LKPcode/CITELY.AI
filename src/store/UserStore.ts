@@ -6,7 +6,7 @@ import supabase from '../api/supabase_instance'
 const user = ref<User|null>(null)
 
 let channelA = supabase
-                .channel('schema-db-changessss')
+                .channel('realtime:public:user')
                 .on(
                 'postgres_changes',
                 {

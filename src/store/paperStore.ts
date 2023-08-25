@@ -34,6 +34,11 @@ export default function usePaperStore () {
     initPaperList([])
   }
 
+  const updatePaper = (paper: Paper) => {
+    let paper_index = paper_list.value.findIndex((p) => p.id === paper.id)
+    paper_list.value[paper_index] = paper
+  }
+
 
 
   return {
@@ -43,6 +48,7 @@ export default function usePaperStore () {
     selectPaper,
     addPaper,
     removePapers,
-    clearPaper
+    clearPaper,
+    updatePaper
   }
 }

@@ -36,6 +36,13 @@ export default function useChatStore() {
     }
   }
 
+  const updateChatConversation = (chat_id: string, conversation: any[]) => {
+    const chat = chat_list.value.find(chat => chat.id == chat_id)
+    if (chat) {
+      chat.conversation = conversation
+    }
+  }
+
 
   return {
     chat_list,
@@ -45,6 +52,7 @@ export default function useChatStore() {
     selectChat,
     clearChat,
     showDeleteChatModal,
-    removeChat
+    removeChat,
+    updateChatConversation
   }
 }

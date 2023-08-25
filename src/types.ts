@@ -11,6 +11,7 @@ interface Chat {
     name: string;
     created_at?: string;
     workspace_id: string;
+    conversation?: any[];
 }
 
 

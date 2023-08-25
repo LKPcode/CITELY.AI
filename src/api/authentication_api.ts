@@ -7,7 +7,7 @@ supabase.auth.onAuthStateChange((event, session) => {
   if (event == 'SIGNED_OUT') {
     console.log('SIGNED_OUT', session)
     document.location = '/'
-}
+  }
 })
 
 // Register a new user
