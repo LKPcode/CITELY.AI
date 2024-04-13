@@ -1,11 +1,11 @@
 <template>
     <!-- MainBar HEADER -->
-    <div class="h-[70px] group min-h-[70px] bg-white  border-b border-grayer relative">
+    <div class="h-[70px] group min-h-[70px] bg-white dark:bg-dark  border-b border-grayer relative">
                 <div class="h-[3px] bg-accent"></div>
 
                 <div class="flex items-center">
 
-                    <div @click="goBack" class="bg-gray-100 hover:bg-lightgray rounded-xl p-2 m-2 cursor-pointer">
+                    <div @click="goBack" class="bg-gray-100 dark:bg-darker dark:hover:bg-darker dark:hover:brightness-90 hover:bg-lightgray rounded-xl p-2 m-2 cursor-pointer">
                         <img src="../components/icons/Back.svg" class="w-8 " alt="">
                     </div>
 
@@ -26,11 +26,11 @@
                                     <div class="flex items-center">
                                         <router-link 
                                         :to="{ name: page.routename }"
-                                        :class="index === pages.length - 1 ? 'font-bold text-gray-700 hover:text-gray-900' : 'font-medium text-gray-500 hover:text-gray-700'"
+                                        :class="index === pages.length - 1 ? 'font-bold text-gray-700 hover:text-gray-900 dark:text-white' : 'font-medium text-gray-500 hover:text-gray-700 dark:text-lightgray dark:hover:text-white'"
                                         class=" text-sm mr-2 " > {{ page.name }} </router-link>
                                         <img
                                             v-if="index !== pages.length - 1"
-                                            src="../components/icons/RightArrow.svg" class="h-5 w-5 mr-2 flex-shrink-0 text-gray-400" aria-hidden="true" />
+                                            src="../components/icons/RightArrow.svg" class="h-5 w-5 mr-2 flex-shrink-0 text-gray-400 dark:text-lightgray" aria-hidden="true" />
                                     </div>
                                 </li>
                                 </ol>

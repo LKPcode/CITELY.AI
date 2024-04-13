@@ -1,6 +1,6 @@
 <template>
     <DeleteWorkspacePopup class="z-40" />
-    <div class="h-full flex overflow-hidden">
+    <div class="h-full flex overflow-hidden dark:bg-dark">
 
 
         <!-- <PaperSearch /> -->
@@ -41,7 +41,7 @@
 
 
             <!-- Library -->
-            <div class="px-12 mb-12 mt-4 grow flex flex-col">
+            <div class="px-12 mb-12 mt-4 grow flex flex-col ">
 
                 <!-- <Tabs/> -->
                 <div v-if="!loading" 
@@ -76,9 +76,9 @@
                     ">
             <div class="flex flex-col h-full  min-w-[400px]">
                 <!-- RightBar HEADER -->
-                <div class="h-[70px] bg-white  border-b border-grayer">
+                <div class="h-[70px]   border-b border-grayer">
                     <div class="py-3 px-4">
-                        <div class="font-bold">
+                        <div class="font-bold dark:text-white">
                             Details
                             <span class="text-grayest text-sm ml-2 font-normal"> (4) </span>
                         </div>

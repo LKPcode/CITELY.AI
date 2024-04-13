@@ -1,6 +1,6 @@
 <template>
     <TransitionIn>
-<div class="bg-zinc-100 flex justify-center">
+<div class="bg-zinc-100 dark:bg-darker dark:text-lightgray flex justify-center">
             <!-- USER QUERY -->
             <div class=" w-[80%] max-w-4xl text-sm py-4 relative min-h-[60px] flex items-center">
 

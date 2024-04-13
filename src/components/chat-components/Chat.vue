@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full grow flex flex-col">
+    <div class="h-full grow flex flex-col dark:bg-dark">
         
     <div class=" grow overflow-auto relative flex flex-col-reverse">
         

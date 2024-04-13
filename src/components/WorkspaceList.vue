@@ -31,14 +31,14 @@
     class="divide-y h-full divide-gray-100 overflow-y-auto overflow-x-hidden mb-24">
     <TransitionGroup name="list" tag="ul">
       <li v-for="workspace in workspace_store.workspace_list.value" :key="workspace.id"
-        class="relative py-5 hover:bg-gray-50 hover:pl-4 transition-all">
+        class="relative py-5 hover:bg-gray-50 dark:hover:bg-darker hover:pl-4 transition-all">
         <RouterLink :to="{ name: 'WorkspaceView', params: { workspace_id: workspace.id } }">
           <div class="px-4 sm:px-6 lg:px-8">
             <div class="mx-auto flex max-w-4xl justify-between gap-x-6">
               <div class="flex gap-x-4">
-                <img class="h-8 w-8 flex-none rounded-full bg-gray-50" src="../components/icons/Answer.svg" alt="" />
+                <img class="h-8 w-8 flex-none rounded-full" src="../components/icons/Answer.svg" alt="" />
                 <div class="min-w-0 flex-auto">
-                  <p class="text-sm font-semibold leading-6 text-gray-900">
+                  <p class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                   <div>
                     <span class="absolute inset-x-0 -top-px bottom-0" />
                     {{ workspace.name }}
@@ -51,7 +51,7 @@
               </div>
               <div class="flex items-center gap-x-4">
                 <div class="hidden sm:flex sm:flex-col sm:items-end">
-                  <p class="text-sm leading-6 text-gray-900"> Working with {{ workspace.paper_num }} papers</p>
+                  <p class="text-sm leading-6 text-gray-900 dark:text-white"> Working with {{ workspace.paper_num }} papers</p>
                   <p class="mt-1 text-xs leading-5 text-gray-500">
                     Created <time :datetime="workspace.created_at"> {{ formatDateRelativeToCurrent(workspace.created_at)
                     }}</time>

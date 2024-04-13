@@ -2,23 +2,23 @@
     <div class=" w-[300px] min-w-[300px] h-full
      overflow-hidden border-r  border-grayer   
     transition-all ease-in-out duration-500 
-    ~bg-white
+    bg-white  dark:bg-dark
     "
     :class="{'ml-[-300px]': !showSidebar}"
     >
         <div class="flex flex-col h-full">
 
         <!-- SIDEBAR HEADER -->
-        <div class="h-[70px] p-3 flex items-center bg-white  border-b border-grayer">
+        <div class="h-[70px] p-3 flex items-center bg-white  dark:bg-dark  border-b border-grayer">
             <div @click="createNewChat"
-             class="grow flex items-center p-2 mr-4 text-center bg-gray-50 hover:bg-gray-100 border border-gray-100 hover:border-accent  rounded-xl cursor-pointer">
+             class="grow flex items-center p-2 mr-4 text-center bg-gray-50  dark:bg-dark hover:bg-gray-100  dark:hover:bg-darker border border-gray-100 hover:border-accent  rounded-xl cursor-pointer">
                 <img src="../components/icons/NewChat.svg" class="w-8 ml-2" alt="Add Paper">
-                <div class="text-center grow font-bold ">
+                <div class="text-center grow font-bold dark:text-white ">
                     New Chat
                 </div>
             </div>
 
-            <div @click="showSidebar=!showSidebar" class="bg-gray-50 border border-gray-100 hover:border-accent rounded-xl p-3 cursor-pointer ">
+            <div @click="showSidebar=!showSidebar" class="bg-gray-50  dark:bg-dark border border-gray-100 hover:border-accent rounded-xl p-3 cursor-pointer ">
                 <img src="../components/icons/Sidebar.svg" class="w-6" alt="">
             </div>
 
@@ -28,12 +28,12 @@
              class="absolute z-40 top-20  left-2">
 
                 <div  @click="showSidebar=!showSidebar" 
-                 class="hover:bg-gray-100 opacity-1 rounded-xl p-3 cursor-pointer border border-gray-100/0  hover:border-accent">
+                 class="hover:bg-gray-100 dark:hover:bg-darker opacity-1 rounded-xl p-3 cursor-pointer border border-gray-100/0  hover:border-accent">
                     <img src="../components/icons/Sidebar.svg" class="w-6" alt="">
                 </div>
 
                 <div  @click="createNewChat" 
-                 class="mt-2 hover:bg-gray-100 opacity-1 rounded-xl p-2 cursor-pointer border border-gray-100/0  hover:border-accent">
+                 class="mt-2 hover:bg-gray-100 dark:hover:bg-darker opacity-1 rounded-xl p-2 cursor-pointer border border-gray-100/0  hover:border-accent">
                     <img src="../components/icons/NewChat.svg" class="w-8" alt="Add Paper">
 
                 </div>

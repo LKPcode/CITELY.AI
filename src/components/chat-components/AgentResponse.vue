@@ -1,7 +1,7 @@
 <template>
     <!-- AI RESPONSE -->
     <!--  -->
-    <div class="flex justify-center"
+    <div class="flex justify-center dark:text-lightgray"
 
     >
         <div class="w-[80%] max-w-4xl text-sm py-4 min-h-[60px]"

@@ -24,7 +24,7 @@
                     <span class="text-center text-gray-500 text-sm font-bold">LIMITATIONS</span>
 
                    <div v-for="_ in 4"
-                    class="bg-gray-50 shadow-sm p-4 rounded-md text-gray-500 cursor-pointer hover:bg-gray-100 text-center">
+                    class="bg-gray-50 dark:bg-darker shadow-sm p-4 rounded-md text-gray-500 dark:text-lightgray cursor-pointer hover:bg-gray-100 dark:hover:bg-darker text-center">
                     "Lorem ipsum, dolor sit amet consectetur adipisicing elit."
                    </div>
                 </div>

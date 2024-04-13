@@ -1,10 +1,11 @@
 <template>
     <div class="h-full hidden lg:block w-[400px] min-w-[400px] border-l border-grayer overflow-hidden
     //mr-[-400px] transition-all ease-in-out duration-500 sm:duration-700
+    dark:bg-dark dark:text-white
     ">
         <div class="flex flex-col h-full  min-w-[400px]">
         <!-- RightBar HEADER -->
-        <div class="h-[70px] bg-white  border-b border-grayer">
+        <div class="h-[70px] border-b border-grayer">
             <div class="py-3 px-4">
                 <div class="font-bold">
                     Sources

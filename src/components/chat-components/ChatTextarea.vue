@@ -1,14 +1,14 @@
 <template>
       <!-- <div class="mt-20 grow"></div> -->
 
-    <div class=" w-full sticky bottom-0 flex justify-center bg-zinc-50">
+    <div class=" w-full sticky bottom-0 flex justify-center bg-zinc-50 dark:bg-darker">
         <div class="my-4 w-[80%] max-w-[800px] relative">
             <textarea
                 @keydown.enter.exact.prevent="sendQuery"
                 v-focus 
                 ref="textarea"
                 v-model="query"
-                class="w-full  border-none focus:ring-accent p-3 rounded-xl bg-lightgray shadow-md border border-grayer min-h-[50px] h-[0px] max-h-[200px]"
+                class="w-full  border-none focus:ring-accent p-3 rounded-xl bg-lightgray dark:bg-dark dark:text-lightgray shadow-md border border-grayer min-h-[50px] h-[0px] max-h-[200px]"
                 @input="resizeTextarea" ></textarea>
             <svg @click="sendQuery" width="56" height="56"
                 :class="{ 'fill-accent': query.length > 0, 'fill-gray-500': query.length == 0 }"

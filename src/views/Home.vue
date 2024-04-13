@@ -1,10 +1,10 @@
 <template>
 
-<div class="h-full flex flex-col pt-16">
+<div class="h-full flex flex-col pt-16 dark:bg-dark dark:text-white">
 
 
     <!-- MainBar HEADER -->
-    <div class="h-[70px] min-h-[70px] bg-white  border-b border-grayer fixed top-0 w-full z-40 ">
+    <div class="h-[70px] min-h-[70px] bg-white dark:bg-dark  border-b border-grayer fixed top-0 w-full z-40 ">
                 <div class="h-[3px] bg-accent"></div>
 
                 <div class="mx-3 h-full flex justify-start items-center">
@@ -18,12 +18,12 @@
                     <span class="ml-auto h-full flex items-center">
                         <button
                         @click="scrollTo('pricing-section')"
-                        class="flex items-center  text-sm font-semibold  hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
+                        class="flex items-center  text-sm font-semibold  hover:bg-lightgray dark:hover:bg-darker px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
                         Pricing
                     </button>
                     <button
                         @click="scrollTo('FAQ')"
-                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
+                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray dark:hover:bg-darker px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
                         FAQ
                     </button>
 
@@ -31,12 +31,12 @@
 
                     <RouterLink
                         to="/settings"
-                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
+                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray dark:hover:bg-darker px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
                         Settings
                     </RouterLink>
 
                     <button
-                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
+                         class="flex items-center  text-sm font-semibold  hover:bg-lightgray dark:hover:bg-darker px-4 py-2 mx-4 my-2 rounded-xl cursor-pointer">
                         {{ user_store.user.value?.subscription_plan }}
                     </button>
                     

@@ -3,7 +3,7 @@
   <div class="mt-4 ">
     <div class="sm:flex sm:items-center mb-8">
       <div class="sm:flex-auto">
-        <h1 class=" ml-4 text-xl font-semibold leading-1 text-gray-900">Library</h1>
+        <h1 class=" ml-4 text-xl font-semibold leading-1 text-gray-900 dark:text-white">Library</h1>
       </div>
 
         <RouterLink :to="{name: 'SearchView'}" type="button"
@@ -36,7 +36,7 @@
               <thead class="">
 
                 <tr class="bg-white z-20">
-                  <th scope="col" class=" px-7 sm:w-12 sm:px-6 sticky top-0 bg-white z-20">
+                  <th scope="col" class=" px-7 sm:w-12 sm:px-6 sticky top-0 bg-white dark:bg-dark z-20">
                     <input type="checkbox"
                       class="absolute left-4 top-1/2 -mt-2 h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent"
                       :checked="indeterminate || selectedPapers.length === paper_store.paper_list.value.length"
@@ -44,30 +44,30 @@
                       @change="selectedPapers = $event.target?.checked ? paper_store.paper_list.value.map((p) => p.id) : []" />
                   </th>
                   <th scope="col"
-                    class="min-w-[12rem]  py-3.5 pr-3 text-left text-sm font-semibold text-gray-900 sticky top-0 bg-white z-20">
+                    class="min-w-[12rem]  py-3.5 pr-3 text-left text-sm font-semibold text-gray-900 dark:text-white sticky top-0 bg-white  dark:bg-dark z-20">
                     <div class="relative">
                       Title
                       <div v-if="selectedPapers.length > 0"
-                        class="absolute mt-[-10px] top-0 z-30 flex h-10 items-center space-x-3  bg-white ">
-                        <!-- <button type="button" class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">Bulk edit</button> -->
+                        class="absolute mt-[-10px] top-0 z-30 flex h-10 items-center space-x-3  bg-white  dark:bg-dark ">
+                        <!-- <button type="button" class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">Bulk edit</button> -->
                         <button type="button" @click="removeFromLibrary"
-                          class="inline-flex items-center rounded bg-white px-2 py-1 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">
+                          class="inline-flex items-center rounded bg-white  dark:bg-dark px-2 py-1 text-sm font-semibold text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:hover:bg-darker disabled:cursor-not-allowed disabled:opacity-30 disabled:hover:bg-white">
                           Delete Selected
                         </button>
                       </div>
                     </div>
                   </th>
                   <th scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sticky top-0 bg-white z-20">Published
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white sticky top-0 bg-white  dark:bg-dark z-20">Published
                   </th>
                   <th scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sticky top-0 bg-white z-20 w-[200px]">
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white sticky top-0 bg-white  dark:bg-dark z-20 w-[200px]">
                     Authors
                   </th>
                   <th scope="col"
-                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 sticky top-0 bg-white z-20">Status
+                    class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 dark:text-white sticky top-0 bg-white dark:bg-dark z-20">Status
                   </th>
-                  <th scope="col" class=" py-3.5 pl-3 pr-4 sm:pr-3 sticky top-0 bg-white z-20">
+                  <th scope="col" class=" py-3.5 pl-3 pr-4 sm:pr-3 sticky top-0 bg-white  dark:bg-dark z-20">
                     <span class="sr-only">
                       Open
                     </span>
@@ -75,12 +75,12 @@
                 </tr>
               </thead>
 
-              <tbody class="divide-y divide-gray-200 bg-white overflow-scroll ">
+              <tbody class="divide-y divide-gray-200 bg-white dark:bg-dark overflow-scroll ">
                 <tr @click="paper_store.selectPaper(paper)"
                     @dblclick="viewPDF(paper.id as string)"
                     v-for="paper in paper_store.paper_list.value" :key="paper.id"
-                  class="cursor-pointer hover:bg-gray-50"
-                  :class="[selectedPapers.includes(paper.id) && 'bg-gray-50', paper_store.selected_paper.value?.id == paper.id && 'bg-gray-50']">
+                  class="cursor-pointer hover:bg-gray-50 dark:hover:bg-darker"
+                  :class="[selectedPapers.includes(paper.id) && 'bg-gray-50 dark:bg-dark', paper_store.selected_paper.value?.id == paper.id && 'bg-gray-50  dark:bg-dark']">
                   <td class="relative px-7 sm:w-12 sm:px-6">
                     <div v-if="selectedPapers.includes(paper.id)" class="absolute inset-y-0 left-0 w-0.5 bg-accent"></div>
                     <input @click.stop type="checkbox"
@@ -88,7 +88,7 @@
                       :value="paper.id" v-model="selectedPapers" />
                   </td>
                   <td
-                    :class="['whitespace-nowrap py-4 pr-3 text-sm font-medium ', selectedPapers.includes(paper.id) ? 'text-accent' : 'text-gray-900']">
+                    :class="['whitespace-nowrap py-4 pr-3 text-sm font-medium ', selectedPapers.includes(paper.id) ? 'text-accent' : 'text-gray-900  dark:text-white']">
                     <div class="max-w-[400px] truncate">
                       {{ paper.title }}
                     </div>

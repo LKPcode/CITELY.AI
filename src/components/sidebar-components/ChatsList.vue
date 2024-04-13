@@ -11,7 +11,7 @@
                     <RouterLink 
                         :to="{name: 'MainBar', params: { chat_id: chat.id}}"
                         class=" flex items-center p-1 rounded-xl cursor-pointer"
-                        :class="[chat.id == selected_chat?.id ? 'bg-gray-50 text-accent' : 'hover:bg-gray-50']" >
+                        :class="[chat.id == selected_chat?.id ? 'bg-gray-50  dark:bg-darker text-accent' : 'hover:bg-gray-50  dark:hover:bg-darker']" >
                         <!-- <img src="../../components/icons/Chat.svg" class="w-7 ml-2 stroke-accent" alt="Chat Icon"> -->
 
                         <svg class="w-7 ml-2 "
@@ -22,7 +22,7 @@
                             <path d="M13.125 20.4167H17.5"  stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
 
-                        <div class="ml-4 text-sm font-semibold">
+                        <div class="ml-4 text-sm font-semibold  dark:text-white">
                             {{ chat.name }}
                         </div>
                         
