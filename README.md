@@ -1,11 +1,10 @@
 # CITELY.AI
 ---
+Citely.ai is a SaaS platform designed to enhance the research process for students and researchers by utilizing the capabilities of advanced Large Language Models like ChatGPT. The platform aims to streamline the management of extensive research data, facilitating easier comprehension, organization, and discovery of new scientific knowledge.
 
-Citely.ai is SASS platform that aims to help researchers and students to manage the plethora of information they come across during their research by leveraging the power of Large Language Models like ChatGPT. The main focus of citely.ai is to provide a fast and efficient way to understand, organize and discover new scientific knowledge.
+This initiative was launched after being selected for the [EGG Incubator](https://www.theegg.gr/en/) program by EuroBank in Greece. The development team consisted of two members; I took on the role of lead developer, overseeing the design, frontend, and backend development. My colleague focused on the Natural Language Processing (NLP) components. Although Citely.ai did not advance to the final stage of the incubation program, it provided a valuable opportunity for professional growth and collaboration with a talented team.
 
-This platform was developed after being accepted as a startup project for the [EGG Incubator](https://www.theegg.gr/en/) program of EuroBank in Greece. The project was developed by a team of 2 people, with me being the lead developer and responsible for the design, frontend and backend development of the platform while the other member was responsible for the NLP part of the project. While this project did not get to the final stage of the program, it was a great learning experience for me and I got to work with some amazing people.
-
-The following is an overview of the platform and its tech stack to provide a better understanding of the features that were implemented and the technologies that were used.
+Here is an overview of the platform, highlighting the implemented features and the technologies employed in its development.
 
 ## Tech Stack
 
@@ -19,7 +18,7 @@ The following is an overview of the platform and its tech stack to provide a bet
 * **User Authentication**: Users can sign up and login to the platform using their email and password. The platform also supports social login using Google and Github.
 * **Workspace**: Users can see their recent activity, saved articles, and other relevant information on their dashboard.
 * **Article Search**: Users can search for articles using the Semantic Scholar API and save them to their workspace.
-* **Chat Interface**: Users can interact with the LLM model using the ChatGPT-like interface to ask questions and get answers based on the articles they have saved.
+* **Chat Interface**: Users can interact with the LLM model using the ChatGPT-like interface to ask questions and get answers based on the articles they have saved. The chat interface supports live rendering of LaTex, Chemical Equations, and other scientific notations by extending Markdown to support these features.
 * **Payment Processing**: Users can subscribe to a monthly plan to access premium features of the platform using the Stripe API.
 
 The basic idea behind the platform is to provide a an all in one solution for researchers to query all the academic articles they have saved in their workspace and get answers to their questions in a conversational manner. In the background the platform transforms the PDF into LaTex, uses the LangChain API to generate embeddings for the articles and the ChatGPT API to generate answers to the user's questions. With the power the LLM Agents architecture, we can provide a more conversational and human-like experience to researchers and students.
@@ -108,8 +107,15 @@ Users can subscribe to a monthly plan to access premium features of the platform
 
 ## Conclusion
 
-Citely.ai was a great project to work on and I learned a lot about the power of Large Language Models and their limitations. By designing and building the platform from scratch I gained a lot of experience in building full-stack applications and integrating different APIs.
 
-The javascript engineering aspect of the project like the chat interface and the integrated PDF viewer were the most challenging and interesting parts of the project. I had to learn a lot about the different libraries and tools available to build these features and it was a great learning experience.
+Working on Citely.ai was an enriching experience that deepened my understanding of Large Language Models, including their potential and limitations. Developing the platform from the ground up allowed me to acquire substantial expertise in full-stack application development and API integration.
 
-The platform is still in development and there are many features that can be added to make it more useful for researchers and students.
+
+
+The JavaScript engineering elements, such as creating the chat interface and integrating a PDF viewer, posed significant challenges but were also the most engaging parts of the project. I delved into various libraries and tools to construct these features from scratch.
+
+The citely.ai landing page was also developed by me using NextJS and TailwindCSS. The landing page is hosted on Namecheap and can be accessed [here](citely.ai).
+
+The experience of working on a real-world project with a clear goal and timeline was invaluable for my professional growth.
+
+The development of the platform is ongoing, with numerous possibilities for adding features that could further enhance its utility for researchers and students.
