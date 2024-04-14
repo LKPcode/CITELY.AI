@@ -117,4 +117,4 @@ The citely.ai landing page was also developed by me using NextJS and TailwindCSS
 
 The experience of working on a real-world project with a clear goal and timeline was invaluable for my professional growth.
 
-The development of the platform is ongoing, with numerous possibilities for adding features that could further enhance its utility for researchers and students. The LLM pipeline is not contained in this codebase as it is closed source as of now.
+The development of the platform is ongoing, with numerous possibilities for adding features that could further enhance its utility for researchers and students. The LLM pipeline is not included in this codebase as it is closed source as of now.
