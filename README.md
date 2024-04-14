@@ -1,8 +1,8 @@
 # CITELY.AI
 ---
-Citely.ai is a SaaS platform designed to enhance the research process for students and researchers by utilizing the capabilities of advanced Large Language Models like ChatGPT. The platform aims to streamline the management of extensive research data, facilitating easier comprehension, organization, and discovery of new scientific knowledge.
+Citely.ai is a SaaS platform designed to enhance the research process for students and researchers by utilizing the capabilities of advanced Large Language Models like ChatGPT. We aim to streamline the management of extensive research data, facilitating easier comprehension, organization, and discovery of new scientific knowledge.
 
-This initiative was launched after being selected for the [EGG Incubator](https://www.theegg.gr/en/) program by EuroBank in Greece. The development team consisted of two members; I took on the role of lead developer, overseeing the design, frontend, and backend development. My colleague focused on the Natural Language Processing (NLP) components. Although Citely.ai did not advance to the final stage of the incubation program, it provided a valuable opportunity for professional growth and collaboration with a talented team.
+This initiative was launched after being selected for the [EGG Incubator](https://www.theegg.gr/en/) program by EuroBank in Greece. The development team consisted of two members; I took on the role of lead developer, overseeing the UI/UX design, Architecture Design, Frontend, and Backend development. My colleague focused on the Natural Language Processing (NLP) components (LLM Agents). Although Citely.ai did not advance to the final stage of the incubation program, it provided a valuable opportunity for professional growth and collaboration with a talented team.
 
 Here is an overview of the platform, highlighting the implemented features and the technologies employed in its development.
 
@@ -11,7 +11,7 @@ Here is an overview of the platform, highlighting the implemented features and t
 * Vue3 / TailwindCSS / Vite (for the Web App interface)
 * Supabase for the database, storage and user authentication
 * Python / FastAPI / LangChain / Vector Database (for the NLP part of the platform)
-* APIs used: OpenAI ChatGPT/Embeddings, Semantic Scholar, Stripe (for payment processing)
+* APIs used: OpenAI ChatGPT/Embeddings, Mathpix, Semantic Scholar, Stripe (for payment processing)
 
 ## Features
 
@@ -73,7 +73,7 @@ This is the most important feature of the platform. Users can interact with thei
 
 ---
 
-The chat interface supports live rendering of LaTex, Chemical Equations, and other scientific notations. This was the most interesting part of the project as it required a lot of work to get the rendering right and support Adaptable UI functionalities extending the ChatGPT interface
+The chat interface supports live rendering of LaTex, Chemical Equations, and other scientific notations. This was the most interesting part of the project as it required a lot of work to get the rendering right and support Adaptable UI functionalities extending the functionalities of the ChatGPT interface
 
 ![Citely.ai](./screenshots/chat_js.png)
 
@@ -111,11 +111,10 @@ Users can subscribe to a monthly plan to access premium features of the platform
 Working on Citely.ai was an enriching experience that deepened my understanding of Large Language Models, including their potential and limitations. Developing the platform from the ground up allowed me to acquire substantial expertise in full-stack application development and API integration.
 
 
-
 The JavaScript engineering elements, such as creating the chat interface and integrating a PDF viewer, posed significant challenges but were also the most engaging parts of the project. I delved into various libraries and tools to construct these features from scratch.
 
 The citely.ai landing page was also developed by me using NextJS and TailwindCSS. The landing page is hosted on Namecheap and can be accessed [here](citely.ai).
 
 The experience of working on a real-world project with a clear goal and timeline was invaluable for my professional growth.
 
-The development of the platform is ongoing, with numerous possibilities for adding features that could further enhance its utility for researchers and students.
+The development of the platform is ongoing, with numerous possibilities for adding features that could further enhance its utility for researchers and students. The LLM pipeline is not contained in this codebase as it is closed source as of now.
