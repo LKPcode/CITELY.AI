@@ -8,7 +8,7 @@ Here is an overview of the platform, highlighting the implemented features and t
 
 ## Tech Stack
 
-* Vue3 / TailwindCSS / Vite (for the Web App interface)
+* Vue3 / TypeScript / TailwindCSS / Vite (for the Web App interface)
 * Supabase for the database, storage and user authentication
 * Python / FastAPI / LangChain / Vector Database (for the NLP part of the platform)
 * APIs used: OpenAI ChatGPT/Embeddings, Mathpix, Semantic Scholar, Stripe (for payment processing)
